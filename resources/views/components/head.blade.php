@@ -5,4 +5,5 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Barroc Intens</title>
     @vite('resources/css/app.css')
+    @livewireStyles
 </head>

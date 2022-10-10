@@ -1,6 +1,9 @@
-<div class="relative flex items-top justify-center min-h-screen bg-gray-100 dark:bg-gray-900 sm:items-center py-4 sm:pt-0">
+<div class="relative flex items-top justify-center bg-pink-500  py-4 sm:pt-0 ">
     @if (Route::has('login'))
-        <div class="hidden fixed top-0 right-0 px-6 py-4 sm:block">
+        <div class="flex top-0 right-0 justify-between px-6 py-4">
+            <div class="">
+                <a href="{{route('home')}}"><img src="{{ asset('img/Logo6_groot.png') }}" alt="Barroc intens logo"></a>
+            </div>
             @auth
                 <a href="{{ url('/dashboard') }}" class="text-sm text-gray-700 dark:text-gray-500 underline">Dashboard</a>
             @else

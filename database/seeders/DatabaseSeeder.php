@@ -3,6 +3,7 @@
 namespace Database\Seeders;
 
 // use Illuminate\Database\Console\Seeds\WithoutModelEvents;
+use App\Models\Company;
 use App\Models\Role;
 use App\Models\User;
 use Illuminate\Database\Seeder;
@@ -16,8 +17,7 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
-        // \App\Models\User::factory(10)->create();
-
+//        Maakt alle rollen aan voor users
         $admin = Role::create([
             'name' => 'admin',
         ]);
@@ -42,6 +42,7 @@ class DatabaseSeeder extends Seeder
             'name' => 'maintenance',
         ]);
 
+//        Maakt admin account aan
         User::factory()->create([
             'name' => 'Admin',
             'username' => 'Admin',
@@ -50,12 +51,16 @@ class DatabaseSeeder extends Seeder
             'role_id' => $admin->id,
         ]);
 
-//        Maakt users aan voor testdata.
-        User::factory(20)->create(['role_id' => $klant->id]);
+//        Maakt users aan
+        $customers = User::factory(20)->create(['role_id' => $klant->id]);
         User::factory(3)->create(['role_id' => $purchase->id]);
         User::factory(3)->create(['role_id' => $sales->id]);
         User::factory(3)->create(['role_id' => $finance->id]);
         User::factory(3)->create(['role_id' => $maintenance->id]);
 
+//        Maakt companies aan die gelinkt zijn aan de customers die hiervoor zijn aangemaakt.
+        foreach ($customers as $customer){
+            Company::factory()->create(['contact_id' => $customer->id]);
+        }
     }
 }

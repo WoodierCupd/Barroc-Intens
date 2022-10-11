@@ -12,9 +12,13 @@ module.exports = {
         extend: {
             fontFamily: {
                 sans: ['Nunito', ...defaultTheme.fontFamily.sans],
+                bigShouldersDisplay: ['BigShoulderDisplay'],
+                roboto: ['Roboto'],
             },
             colors: {
                 'barroc_yellow': '#FDD716',
+                'barroc_grey': '#212121',
+                'mettalic-yellow': '#fdd716',
             },
         },
     },

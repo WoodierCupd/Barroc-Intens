@@ -2,6 +2,55 @@
 @tailwind components;
 @tailwind utilities;
 
+@font-face {
+    font-family: 'Roboto';
+    src: url('../../public/fonts/Roboto/Roboto-regular.ttf');
+}
+
+@font-face {
+    font-family: 'BigShoulderDisplay';
+    src: url('../../public/fonts/Roboto/Roboto-Regular.ttf');
+}
+
+@layer footer {
+
+    footer {
+        @apply bg-white font-roboto;
+        padding: 60px 0 20px 0;
+    }
+    .footer__top {
+        @apply leading-7;
+        padding-bottom: 35px;
+    }
+
+    .grid {
+        @apply grid-rows-1 grid-cols-4;
+    }
+
+    h2 {
+        @apply text-3xl font-bold !important;
+        margin: 20px 0 10px !important;
+    }
+
+    h3 {
+        @apply font-bold text-xs !important;
+        margin: 20px 0 10px !important;
+    }
+
+    li {
+        @apply list-disc list-inside marker:text-mettalic-yellow;
+    }
+
+    a {
+        text-decoration: underline !important;
+        text-decoration-color: #bfbfbf !important;
+    }
+
+    a:hover {
+        text-decoration-color: black !important;
+    }
+}
+
 /*header styles*/
 
 .header-container {
@@ -20,6 +69,7 @@
     margin-left: auto;
 }
 
+
 .heroButton{
     background-color: #FDD716;
 }
@@ -31,5 +81,5 @@
 }
 
 .filter{
-    background-color: rgba(0, 0, 0, 0.70);
+    background-color: rgba(0, 0, 0, 0.500);
 }

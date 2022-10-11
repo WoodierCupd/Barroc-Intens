@@ -1,4 +1,4 @@
-<div class="sticky top-0 z-50 bg-barroc_yellow">
+<div class="sticky top-0 z-50 bg-mettalic-yellow">
     @if (Route::has('login'))
         <div class="relative flex flex-row px-4 py-2">
             <div class="flex justify-start basis-1/6">

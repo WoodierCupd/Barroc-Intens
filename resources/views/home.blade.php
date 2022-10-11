@@ -1,6 +1,5 @@
 <x-head/>
 <body class="bg-black">
-    <x-header/>
     
     <main>
         <div class="hero px-2 py-64 font-bold">
@@ -12,9 +11,9 @@
             </div>
         </div>
         
-        <x-grid/>
-    </main>
         
+    </main>
+        <x-grid/>
     <x-footer/>
     @livewireScripts
 </body>

@@ -2,6 +2,14 @@
 @tailwind components;
 @tailwind utilities;
 
+/*header styles*/
+
+.header-container{
+    width: 100%;
+    background-color: white;
+
+/*hero styles*/
+
 .hero{
     display: flex;
     flex-direction: column;

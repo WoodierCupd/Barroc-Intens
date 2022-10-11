@@ -17,6 +17,10 @@ Route::get('/', function () {
     return view('home');
 })->name('home');
 
+Route::get('/user/{user}', function (\App\Models\User $user) {
+    return view('user')->with(compact('user'));
+})->name('user');
+
 Route::get('/dashboard', function () {
     return view('dashboard');
 })->middleware(['auth', 'verified'])->name('dashboard');

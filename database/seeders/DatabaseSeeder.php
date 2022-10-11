@@ -16,8 +16,6 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
-        // \App\Models\User::factory(10)->create();
-
         $admin = Role::create([
             'name' => 'admin',
         ]);
@@ -51,11 +49,14 @@ class DatabaseSeeder extends Seeder
         ]);
 
 //        Maakt users aan voor testdata.
-        User::factory(20)->create(['role_id' => $klant->id]);
+        $customers = User::factory(20)->create(['role_id' => $klant->id]);
         User::factory(3)->create(['role_id' => $purchase->id]);
         User::factory(3)->create(['role_id' => $sales->id]);
         User::factory(3)->create(['role_id' => $finance->id]);
         User::factory(3)->create(['role_id' => $maintenance->id]);
 
+        foreach ($customers as $customer){
+
+        }
     }
 }

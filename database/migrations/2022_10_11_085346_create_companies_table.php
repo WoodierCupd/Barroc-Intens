@@ -22,6 +22,8 @@ return new class extends Migration
             $table->string('city');
             $table->string('country_code');
             $table->dateTime('bkr_checked')->nullable();
+            $table->unsignedBigInteger('contact_id');
+            $table->foreign('contact_id')->references('id')->on('users')->onDelete('cascade');
             $table->timestamps();
         });
     }

@@ -1,4 +1,4 @@
-<div class="relative flex items-top justify-center bg-pink-500  py-4 sm:pt-0 ">
+<div class="relative flex items-top justify-center bg-yellow-500  py-4 sm:pt-0 ">
     @if (Route::has('login'))
         <div class="flex top-0 right-0 justify-between px-6 py-4">
             <div class="">

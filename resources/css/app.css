@@ -4,12 +4,12 @@
 
 @font-face {
     font-family: 'Roboto';
-    src: url('../public/fonts/Roboto/Roboto-regular.ttf');
+    src: url('../../public/fonts/Roboto/Roboto-regular.ttf');
 }
 
 @font-face {
     font-family: 'BigShoulderDisplay';
-    src: url('../public/fonts/Roboto/Roboto-Regular.ttf');
+    src: url('../../public/fonts/Roboto/Roboto-Regular.ttf');
 }
 
 @layer footer {

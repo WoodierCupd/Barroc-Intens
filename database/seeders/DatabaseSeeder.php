@@ -3,6 +3,7 @@
 namespace Database\Seeders;
 
 // use Illuminate\Database\Console\Seeds\WithoutModelEvents;
+use App\Models\Company;
 use App\Models\Role;
 use App\Models\User;
 use Illuminate\Database\Seeder;
@@ -56,7 +57,7 @@ class DatabaseSeeder extends Seeder
         User::factory(3)->create(['role_id' => $maintenance->id]);
 
         foreach ($customers as $customer){
-
+            Company::factory()->create(['contact_id' => $customer->id]);
         }
     }
 }

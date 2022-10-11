@@ -11,6 +11,10 @@
     margin-left: auto;
 }
 
+.heroButton{
+    background-color: #FDD716;
+}
+
 main{
     background-repeat: no-repeat;
     background-size: cover;

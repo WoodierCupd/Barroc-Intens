@@ -49,5 +49,13 @@ class DatabaseSeeder extends Seeder
             'password' => bcrypt('password'),
             'role_id' => $admin->id,
         ]);
+
+//        Maakt users aan voor testdata.
+        User::factory(20)->create(['role_id' => $klant->id]);
+        User::factory(3)->create(['role_id' => $purchase->id]);
+        User::factory(3)->create(['role_id' => $sales->id]);
+        User::factory(3)->create(['role_id' => $finance->id]);
+        User::factory(3)->create(['role_id' => $maintenance->id]);
+
     }
 }

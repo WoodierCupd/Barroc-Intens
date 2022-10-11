@@ -1,4 +1,4 @@
-<div class="container mx-auto">
+<div class="container mx-auto bg-white">
     <div class="grid grid-cols-3 gap-4">
 
 {{--        TODO: make the grid items not static and load from DB        --}}

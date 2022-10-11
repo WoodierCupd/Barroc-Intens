@@ -10,6 +10,7 @@
                 <a href="#" class="text-lg px-2 text-gray-700 dark:text-gray-500 underline">Link 3</a>
             </div>
             <div class="flex justify-end items-center basis-1/6">
+                <a href="{{route('contactform')}}" class="text-lg px-2 text-gray-700 dark:text-gray-500 underline">Offerte aanvragen</a>
                 @auth
                     <a href="{{ url('/dashboard') }}" class="text-lg text-gray-700 dark:text-gray-500 underline">Dashboard</a>
                 @else

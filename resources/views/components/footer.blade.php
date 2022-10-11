@@ -14,9 +14,20 @@
 
                 <div class="machines">
                     <h2>Machines</h2>
+                    <ul>
+                        <h3>Koffiemachines en -molens</h3>
+                        <li><a href="#" target="_blank">Voor horeca</a></li>
+                        <li><a href="#" target="_blank">Voor bedrijven</a></li>
+                    </ul>
                 </div>
                 <div class="company">
-                    <h2>Barroc Intens</h2>
+                    <h2>Over ons</h2>
+                    <ul>
+                        <h3>Over ons</h3>
+                        <li><a href="#" target="_blank">Actueel</a></li>
+                        <li><a href="#" target="_blank">Onze mensen</a></li>
+                        <li><a href="#" target="_blank">Visie & Missie</a></li>
+                    </ul>
                 </div>
                 <div class="contact">
                     <h2>Contact</h2>

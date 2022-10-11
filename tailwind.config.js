@@ -15,6 +15,7 @@ module.exports = {
             },
             colors: {
                 'barroc_yellow': '#FDD716',
+                'barroc_grey': '#212121',
             },
         },
     },

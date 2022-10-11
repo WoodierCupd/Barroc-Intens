@@ -2,6 +2,7 @@
 @tailwind components;
 @tailwind utilities;
 
+
 /*header styles*/
 
 .header-container {
@@ -20,6 +21,7 @@
     margin-left: auto;
 }
 
+
 .heroButton{
     background-color: #FDD716;
 }
@@ -31,5 +33,5 @@
 }
 
 .filter{
-    background-color: rgba(0, 0, 0, 0.70);
+    background-color: rgba(0, 0, 0, 0.500);
 }

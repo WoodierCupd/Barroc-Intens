@@ -19,8 +19,33 @@
                         {{ __('Dashboard') }}
                     </x-nav-link>
                     @if(Auth::user()->role_id == '1')
-                        <x-nav-link :href="route('admin')" :active="request()->routeIs('admin')">
+                        <x-nav-link :href="route('admin')" :active="request()->routeIs('admin', 'user')">
                             {{ __('Admin') }}
+                        </x-nav-link>
+                    @endif
+                    @if(Auth::user()->role_id == '2')
+                        <x-nav-link :href="route('klant')" :active="request()->routeIs('klant')">
+                            {{ __('Klant') }}
+                        </x-nav-link>
+                    @endif
+                    @if(Auth::user()->role_id == '3')
+                        <x-nav-link :href="route('purchase')" :active="request()->routeIs('purchase')">
+                            {{ __('Purchase') }}
+                        </x-nav-link>
+                    @endif
+                    @if(Auth::user()->role_id == '4')
+                        <x-nav-link :href="route('sales')" :active="request()->routeIs('sales')">
+                            {{ __('sales') }}
+                        </x-nav-link>
+                    @endif
+                    @if(Auth::user()->role_id == '5')
+                        <x-nav-link :href="route('finance')" :active="request()->routeIs('finance')">
+                            {{ __('Finance') }}
+                        </x-nav-link>
+                    @endif
+                    @if(Auth::user()->role_id == '6')
+                        <x-nav-link :href="route('maintenance')" :active="request()->routeIs('maintenance')">
+                            {{ __('Maintenance') }}
                         </x-nav-link>
                     @endif
                 </div>

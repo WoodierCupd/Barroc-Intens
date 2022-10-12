@@ -83,3 +83,35 @@
 .filter{
     background-color: rgba(0, 0, 0, 0.500);
 }
+
+.form-group{
+    width: 50px;
+    margin-left: 600px;
+}
+
+.form-group input{
+    width: 600px;
+}
+
+.form-group textarea{
+    width: 600px;
+    height: 200px;
+}
+
+.form-group label{
+    width: 600px;
+}
+.form-group button{
+    width: 600px;
+    margin-top: 20px;
+
+}
+
+.form-group button:hover{
+    cursor: pointer;
+}
+
+.h1_contact{
+    margin-left: 600px;
+    font-family: 'BigShoulderDisplay';
+}

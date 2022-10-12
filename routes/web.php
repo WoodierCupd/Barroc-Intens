@@ -19,7 +19,11 @@ Route::get('/', function () {
 
 Route::get('/user/{user}', function (\App\Models\User $user) {
     return view('user')->with(compact('user'));
-})->name('user');
+})->middleware(['auth', 'verified'])->name('user');
+
+Route::get('/contactform', function () {
+    return view('contactform');
+})->name('contactform');
 
 Route::get('/dashboard', function () {
     return view('dashboard');
@@ -29,5 +33,25 @@ Route::get('/dashboard', function () {
 Route::get('/admin', function () {
     return view('admin');
 })->middleware(['auth', 'verified'])->name('admin');
+
+Route::get('/klant', function () {
+    return view('klant');
+})->middleware(['auth', 'verified'])->name('klant');
+
+Route::get('/purchase', function () {
+    return view('purchase');
+})->middleware(['auth', 'verified'])->name('purchase');
+
+Route::get('/sales', function () {
+    return view('sales');
+})->middleware(['auth', 'verified'])->name('sales');
+
+Route::get('/finance', function () {
+    return view('finance');
+})->middleware(['auth', 'verified'])->name('finance');
+
+Route::get('/maintenance', function () {
+    return view('maintenance');
+})->middleware(['auth', 'verified'])->name('maintenance');
 
 require __DIR__.'/auth.php';

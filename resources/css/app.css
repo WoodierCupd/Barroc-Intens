@@ -27,13 +27,13 @@
         @apply grid-rows-1 grid-cols-4;
     }
 
-    h2 {
+    footer h2 {
         @apply text-3xl font-bold !important;
         margin: 20px 0 10px !important;
     }
 
-    h3 {
-        @apply font-bold text-xs !important;
+    footer h3 {
+        @apply font-bold text-base !important;
         margin: 20px 0 10px !important;
     }
 
@@ -41,12 +41,12 @@
         @apply list-disc list-inside marker:text-mettalic-yellow;
     }
 
-    a {
+    footer a {
         text-decoration: underline !important;
         text-decoration-color: #bfbfbf !important;
     }
 
-    a:hover {
+    footer a:hover {
         text-decoration-color: black !important;
     }
 }

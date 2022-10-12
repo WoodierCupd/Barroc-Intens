@@ -48,6 +48,7 @@
 
     footer a:hover {
         text-decoration-color: black !important;
+        transition: text-decoration-color .4s ease;
     }
 }
 

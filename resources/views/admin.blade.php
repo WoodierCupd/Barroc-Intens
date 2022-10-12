@@ -12,6 +12,10 @@
                     <h1 class="font-bold text-3xl mb-3">User Edit:</h1>
                     <livewire:users/>
                 </div>
+                <div class="p-6 bg-white border-b border-gray-200">
+                    <h1 class="font-bold text-3xl mb-3">Company Edit:</h1>
+                    <livewire:companies/>
+                </div>
             </div>
         </div>
     </div>

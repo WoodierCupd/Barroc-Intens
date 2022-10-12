@@ -35,6 +35,8 @@ class UserEdit extends Component
         }
 
         $this->user->save();
+
+        session()->flash('message', 'User successfully updated.');
     }
 
     public function render()

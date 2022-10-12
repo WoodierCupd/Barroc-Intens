@@ -17,6 +17,10 @@ Route::get('/', function () {
     return view('home');
 })->name('home');
 
+Route::get('/user/{user}', function (\App\Models\User $user) {
+    return view('user')->with(compact('user'));
+})->middleware(['auth', 'verified'])->name('user');
+
 Route::get('/contactform', function () {
     return view('contactform');
 })->name('contactform');

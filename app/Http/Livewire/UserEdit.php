@@ -3,6 +3,7 @@
 namespace App\Http\Livewire;
 
 use App\Models\Role;
+use Illuminate\Support\Facades\Hash;
 use Livewire\Component;
 
 class UserEdit extends Component
@@ -28,6 +29,11 @@ class UserEdit extends Component
         $this->user->username = $this->username;
         $this->user->email = $this->email;
         $this->user->role_id = $this->role;
+
+        if ($this->password !== null){
+            $this->user->password = Hash::make($this->password);
+        }
+
         $this->user->save();
     }
 

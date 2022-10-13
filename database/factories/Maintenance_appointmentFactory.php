@@ -20,7 +20,7 @@ class Maintenance_appointmentFactory extends Factory
     public function definition()
     {
         return [
-            'remark' => fake()->sentence(150),
+            'remark' => fake()->sentence(rand(150, 300)),
             'date_added' => fake()->dateTime(),
         ];
     }

@@ -32,6 +32,10 @@ Route::get('/company/{company}', function (\App\Models\Company $company) {
     return view('company')->with(compact('company'));
 })->middleware(['auth', 'verified'])->name('company');
 
+Route::get('/maintenance_appointment/{maintenance_appointment}', function (\App\Models\Maintenance_appointment $maintenance_appointment) {
+    return view('maintenance_appointment')->with(compact('maintenance_appointment'));
+})->middleware(['auth', 'verified'])->name('maintenance_appointment');
+
 Route::get('/contactform', function () {
     return view('contactform');
 })->name('contactform');

@@ -8,7 +8,7 @@ use Illuminate\Database\Eloquent\Model;
 class Maintenance_appointment extends Model
 {
     use HasFactory;
-    protected $table = 'maintenance_appointment';
+    protected $table = 'maintenance_appointments';
     protected $fillable = [
         'company_id',
         'remark',

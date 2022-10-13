@@ -4,6 +4,7 @@ namespace Database\Seeders;
 
 // use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use App\Models\Company;
+use App\Models\Maintenance_appointment;
 use App\Models\Role;
 use App\Models\User;
 use Illuminate\Database\Seeder;
@@ -59,8 +60,15 @@ class DatabaseSeeder extends Seeder
         User::factory(3)->create(['role_id' => $maintenance->id]);
 
 //        Maakt companies aan die gelinkt zijn aan de customers die hiervoor zijn aangemaakt.
+        $companies = collect();
         foreach ($customers as $customer){
-            Company::factory()->create(['contact_id' => $customer->id]);
+            $companies->push(Company::factory()->create(['contact_id' => $customer->id]));
+
+        }
+        foreach ($companies as $company){
+            if (rand(0, 4) == 3){
+                Maintenance_appointment::factory()->create(['company_id' => $company->id]);
+            }
         }
     }
 }

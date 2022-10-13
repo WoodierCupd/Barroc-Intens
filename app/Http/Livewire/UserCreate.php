@@ -32,7 +32,7 @@ class UserCreate extends Component
 
         $this->user->save();
 
-        session()->flash('message', 'User successfully updated.');
+        return redirect()->to(route('admin'));
     }
 
     public function render()

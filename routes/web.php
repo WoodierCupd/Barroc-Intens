@@ -36,6 +36,14 @@ Route::get('/user-create', function () {
     }
 })->middleware(['auth', 'verified'])->name('user-create');
 
+Route::get('/company-create', function () {
+    if (Auth::user()->role_id == 1){
+        return view('company-create');
+    } else {
+        return abort(401);
+    }
+})->middleware(['auth', 'verified'])->name('company-create');
+
 Route::get('/company/{company}', function (\App\Models\Company $company) {
     if (Auth::user()->role_id == 1){
         return view('company')->with(compact('company'));

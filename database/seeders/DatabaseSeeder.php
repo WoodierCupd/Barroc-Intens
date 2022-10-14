@@ -5,6 +5,8 @@ namespace Database\Seeders;
 // use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use App\Models\Company;
 use App\Models\Maintenance_appointment;
+use App\Models\Product;
+use App\Models\Product_category;
 use App\Models\Role;
 use App\Models\User;
 use Illuminate\Database\Seeder;
@@ -43,6 +45,16 @@ class DatabaseSeeder extends Seeder
             'name' => 'maintenance',
         ]);
 
+        $coffee_machine = Product_category::create([
+            'name' => 'coffee machine',
+            'is_employee_only' => 0,
+        ]);
+
+        $beans = Product_category::create([
+            'name' => 'coffee beans',
+            'is_employee_only' => 0,
+        ]);
+
 //        Maakt admin account aan
         User::factory()->create([
             'name' => 'Admin',
@@ -70,5 +82,8 @@ class DatabaseSeeder extends Seeder
                 Maintenance_appointment::factory()->create(['company_id' => $company->id]);
             }
         }
+
+        Product::factory(6)->create(['product_category_id' => $coffee_machine->id]);
+        Product::factory(12)->create(['product_category_id' => $beans->id]);
     }
 }

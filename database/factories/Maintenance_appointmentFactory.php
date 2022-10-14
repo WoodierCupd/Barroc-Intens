@@ -21,7 +21,7 @@ class Maintenance_appointmentFactory extends Factory
     {
         return [
             'remark' => fake()->sentence(rand(150, 300)),
-            'date_added' => fake()->dateTime(),
+            'date_added' => fake()->dateTimeBetween('+2 days', '+2 years'),
         ];
     }
 }

@@ -13,7 +13,7 @@ class MaintenanceAppointments extends Component
     public function render()
     {
         return view('livewire.maintenance-appointments', [
-            'maintenance_appointments' => Maintenance_appointment::paginate(10),
+            'maintenance_appointments' => Maintenance_appointment::orderBy('date_added', 'asc')->paginate(10),
         ]);
     }
 }

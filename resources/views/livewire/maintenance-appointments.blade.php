@@ -14,10 +14,10 @@
                 <td scope="row" class="py-4 px-6 font-medium text-gray-900 whitespace-nowrap dark:text-white">{{$maintenance_appointment->id}}</td>
                 <td class="py-4 px-6">{{$maintenance_appointment->getCompany->name}}</td>
                 <td class="py-4 px-6">{{$maintenance_appointment->date_added}}</td>
-                <td class="py-4 px-6"><a href="{{route('maintenance_appointment', $maintenance_appointment->id)}}">Link</a></td>
+                <td class="py-4 px-6"><a href="{{route('maintenance_appointment', $maintenance_appointment->id)}}">Detail page</a></td>
             </tr>
         @endforeach
         </tbody>
     </table>
-    {{$users}}
+    {{$maintenance_appointments}}
 </div>

@@ -6,6 +6,7 @@
             <th scope="col" class="py-3 px-6">Name</th>
             <th scope="col" class="py-3 px-6">Phone</th>
             <th scope="col" class="py-3 px-6">Owner</th>
+            <th scope="col" class="py-3 px-6">BKR Checked</th>
             <th scope="col" class="py-3 px-6">Edit</th>
         </tr>
         </thead>
@@ -16,6 +17,7 @@
                 <td class="py-4 px-6">{{$company->name}}</td>
                 <td class="py-4 px-6">{{$company->phone}}</td>
                 <td class="py-4 px-6">{{$company->getUser->name}}</td>
+                <td class="py-4 px-6">@if($company->bkr_checked === null) no @else yes @endif</td>
                 <td class="py-4 px-6"><a href="{{route('company', $company->id)}}">Edit</a></td>
             </tr>
         @endforeach

@@ -3,11 +3,14 @@
 namespace App\Http\Livewire;
 
 use App\Models\Company;
+use App\Models\User;
 use Livewire\Component;
 
 class CompanyCreate extends Component
 {
     public $company;
+    public $users;
+    public $user;
     public $name;
     public $phone;
     public $street;
@@ -16,6 +19,10 @@ class CompanyCreate extends Component
     public $country_code;
     public $bkr_checked;
     public $contact_id;
+
+    public function mount(){
+        $this->users = User::all();
+    }
 
     public function submit(){
         $this->company = new Company;
@@ -32,7 +39,7 @@ class CompanyCreate extends Component
         } elseif ($this->bkr_checked === false){
             $this->company->bkr_checked = null;
         }
-        $this->company->contact_id = 1;
+        $this->company->contact_id = $this->user;
         $this->company->save();
 
         return redirect()->to(route('admin'));

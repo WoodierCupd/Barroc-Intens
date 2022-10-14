@@ -21,19 +21,35 @@ Route::get('/', function () {
 })->name('home');
 
 Route::get('/user/{user}', function (\App\Models\User $user) {
-    return view('user')->with(compact('user'));
+    if (Auth::user()->role_id == 1){
+        return view('user')->with(compact('user'));
+    } else {
+        return abort(401);
+    }
 })->middleware(['auth', 'verified'])->name('user');
 
 Route::get('/user-create', function () {
-    return view('user-create');
+    if (Auth::user()->role_id == 1){
+        return view('user-create');
+    } else {
+        return abort(401);
+    }
 })->middleware(['auth', 'verified'])->name('user-create');
 
 Route::get('/company/{company}', function (\App\Models\Company $company) {
-    return view('company')->with(compact('company'));
+    if (Auth::user()->role_id == 1){
+        return view('company')->with(compact('company'));
+    } else {
+        return abort(401);
+    }
 })->middleware(['auth', 'verified'])->name('company');
 
 Route::get('/maintenance_appointment/{maintenance_appointment}', function (\App\Models\Maintenance_appointment $maintenance_appointment) {
-    return view('maintenance_appointment')->with(compact('maintenance_appointment'));
+    if (Auth::user()->role_id == 6){
+        return view('maintenance_appointment')->with(compact('maintenance_appointment'));
+    } else {
+        return abort(401);
+    }
 })->middleware(['auth', 'verified'])->name('maintenance_appointment');
 
 Route::get('/contactform', function () {
@@ -44,7 +60,6 @@ Route::get('/dashboard', function () {
     return view('dashboard');
 })->middleware(['auth', 'verified'])->name('dashboard');
 
-//TODO: check if user role is admin
 Route::get('/admin', function () {
     if (Auth::user()->role_id == 1) {
         return view('admin');

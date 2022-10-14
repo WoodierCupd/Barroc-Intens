@@ -29,7 +29,22 @@ class CompanyEdit extends Component
     }
 
     public function submit(){
-        dd('submit');
+        $this->company->name = $this->name;
+        $this->company->phone = $this->phone;
+        $this->company->street = $this->street;
+        $this->company->house_number = $this->house_number;
+        $this->company->city = $this->city;
+        $this->company->country_code = $this->country_code;
+        $this->company->contact_id = $this->contact_id;
+        if ($this->bkr_checked === true){
+            $this->company->bkr_checked = date('y-m-d h:i:s');
+        } elseif ($this->bkr_checked === false){
+            $this->company->bkr_checked = null;
+        }
+
+        $this->company->save();
+
+        session()->flash('message', 'Company successfully updated.');
     }
 
     public function render()

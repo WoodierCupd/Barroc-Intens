@@ -66,7 +66,7 @@ class DatabaseSeeder extends Seeder
 
         }
         foreach ($companies as $company){
-            if (rand(0, 2) == 1){
+            if (rand(0, 1) == 1){
                 Maintenance_appointment::factory()->create(['company_id' => $company->id]);
             }
         }

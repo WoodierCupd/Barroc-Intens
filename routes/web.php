@@ -17,7 +17,8 @@ use Illuminate\Support\Facades\Route;
 
 
 Route::get('/', function () {
-    return view('home');
+    $machines = \App\Models\Product::all()->where('product_category_id', 1);
+    return view('home', ['machines' => $machines]);
 })->name('home');
 
 Route::get('/user/{user}', function (\App\Models\User $user) {

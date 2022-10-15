@@ -53,6 +53,22 @@ Route::get('/company/{company}', function (\App\Models\Company $company) {
     }
 })->middleware(['auth', 'verified'])->name('company');
 
+Route::get('/product/{product}', function (\App\Models\Product $product) {
+    if (Auth::user()->role_id == 1){
+        return view('product')->with(compact('product'));
+    } else {
+        return abort(401);
+    }
+})->middleware(['auth', 'verified'])->name('product');
+
+Route::get('/product-create', function () {
+    if (Auth::user()->role_id == 1){
+        return view('product-create');
+    } else {
+        return abort(401);
+    }
+})->middleware(['auth', 'verified'])->name('product-create');
+
 Route::get('/maintenance_appointment/{maintenance_appointment}', function (\App\Models\Maintenance_appointment $maintenance_appointment) {
     if (Auth::user()->role_id == 6){
         return view('maintenance_appointment')->with(compact('maintenance_appointment'));

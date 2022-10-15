@@ -17,4 +17,10 @@ class Product extends Model
         'price',
         'product_category_id',
     ];
+
+    public function getCategory()
+    {
+        return $this->belongsTo(Product_category::class, 'product_category_id', 'id');
+
+    }
 }

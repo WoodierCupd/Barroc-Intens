@@ -48,6 +48,9 @@
                             {{ __('Maintenance') }}
                         </x-nav-link>
                     @endif
+                    <x-nav-link :href="route('notes')" :active="request()->routeIs('notes')">
+                            {{ __('Notes') }}
+                    </x-nav-link>
                 </div>
             </div>
 

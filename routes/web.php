@@ -17,7 +17,8 @@ use Illuminate\Support\Facades\Route;
 
 
 Route::get('/', function () {
-    return view('home');
+    $machines = \App\Models\Product::all()->where('product_category_id', 1);
+    return view('home', ['machines' => $machines]);
 })->name('home');
 
 Route::get('/user/{user}', function (\App\Models\User $user) {
@@ -51,6 +52,22 @@ Route::get('/company/{company}', function (\App\Models\Company $company) {
         return abort(401);
     }
 })->middleware(['auth', 'verified'])->name('company');
+
+Route::get('/product/{product}', function (\App\Models\Product $product) {
+    if (Auth::user()->role_id == 1){
+        return view('product')->with(compact('product'));
+    } else {
+        return abort(401);
+    }
+})->middleware(['auth', 'verified'])->name('product');
+
+Route::get('/product-create', function () {
+    if (Auth::user()->role_id == 1){
+        return view('product-create');
+    } else {
+        return abort(401);
+    }
+})->middleware(['auth', 'verified'])->name('product-create');
 
 Route::get('/maintenance_appointment/{maintenance_appointment}', function (\App\Models\Maintenance_appointment $maintenance_appointment) {
     if (Auth::user()->role_id == 6){

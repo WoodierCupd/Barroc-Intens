@@ -17,6 +17,10 @@ Route::get('/', function () {
     return view('home');
 })->name('home');
 
+Route::get('/notes', function () {
+    return view('notes');
+})->middleware(['auth', 'verified'])->name('notes');
+
 Route::get('/contactform', function () {
     return view('contactform');
 })->name('contactform');

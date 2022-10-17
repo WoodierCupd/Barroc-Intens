@@ -36,6 +36,14 @@ Route::get('/user-create', function () {
     }
 })->middleware(['auth', 'verified'])->name('user-create');
 
+Route::get('/company-create', function () {
+    if (Auth::user()->role_id == 1){
+        return view('company-create');
+    } else {
+        return abort(401);
+    }
+})->middleware(['auth', 'verified'])->name('company-create');
+
 Route::get('/company/{company}', function (\App\Models\Company $company) {
     if (Auth::user()->role_id == 1){
         return view('company')->with(compact('company'));
@@ -57,7 +65,21 @@ Route::get('/contactform', function () {
 })->name('contactform');
 
 Route::get('/dashboard', function () {
-    return view('dashboard');
+    switch (Auth::user()->role_id) {
+        case 1:
+            return redirect(route('admin'));
+        case 2:
+            return redirect(route('klant'));
+        case 3:
+            return redirect(route('purchase'));
+        case 4:
+            return redirect(route('sales'));
+        case 5:
+            return redirect(route('finance'));
+        case 6:
+            return redirect(route('maintenance'));
+    }
+//    return view('dashboard');
 })->middleware(['auth', 'verified'])->name('dashboard');
 
 Route::get('/admin', function () {

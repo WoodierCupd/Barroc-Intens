@@ -15,9 +15,9 @@
                     <x-nav-link :href="route('home')">
                         {{ __('Home') }}
                     </x-nav-link>
-                    <x-nav-link :href="route('dashboard')" :active="request()->routeIs('dashboard')">
-                        {{ __('Dashboard') }}
-                    </x-nav-link>
+{{--                    <x-nav-link :href="route('dashboard')" :active="request()->routeIs('dashboard')">--}}
+{{--                        {{ __('Dashboard') }}--}}
+{{--                    </x-nav-link>--}}
                     @if(Auth::user()->role_id == '1')
                         <x-nav-link :href="route('admin')" :active="request()->routeIs('admin', 'user')">
                             {{ __('Admin') }}

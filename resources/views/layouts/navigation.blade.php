@@ -19,7 +19,7 @@
                         {{ __('Dashboard') }}
                     </x-nav-link>
                     @if(Auth::user()->role_id == '1')
-                        <x-nav-link :href="route('admin')" :active="request()->routeIs('admin')">
+                        <x-nav-link :href="route('admin')" :active="request()->routeIs('admin', 'user')">
                             {{ __('Admin') }}
                         </x-nav-link>
                     @endif

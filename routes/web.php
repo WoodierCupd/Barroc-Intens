@@ -69,6 +69,10 @@ Route::get('/product-create', function () {
     }
 })->middleware(['auth', 'verified'])->name('product-create');
 
+Route::get('/product-index/{product}', function (\App\Models\Product $product) {
+        return view('product-index')->with(compact('product'));
+})->name('product-index');
+
 Route::get('/maintenance_appointment/{maintenance_appointment}', function (\App\Models\Maintenance_appointment $maintenance_appointment) {
     if (Auth::user()->role_id == 6){
         return view('maintenance_appointment')->with(compact('maintenance_appointment'));

@@ -33,6 +33,11 @@ class ProductEdit extends Component
         session()->flash('message', 'Product successfully updated.');
     }
 
+    public function delete(){
+        $this->product->delete();
+        return redirect()->to(route('admin'));
+    }
+
     public function render()
     {
         return view('livewire.product-edit');

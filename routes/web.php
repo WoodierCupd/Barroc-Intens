@@ -17,30 +17,95 @@ use Illuminate\Support\Facades\Route;
 
 
 Route::get('/', function () {
-    return view('home');
+    $machines = \App\Models\Product::all()->where('product_category_id', 1);
+    return view('home', ['machines' => $machines]);
 })->name('home');
 
+Route::get('/notes', function () {
+    return view('notes');
+})->middleware(['auth', 'verified'])->name('notes');
 Route::get('/user/{user}', function (\App\Models\User $user) {
-    return view('user')->with(compact('user'));
+    if (Auth::user()->role_id == 1){
+        return view('user')->with(compact('user'));
+    } else {
+        return abort(401);
+    }
 })->middleware(['auth', 'verified'])->name('user');
 
 Route::get('/user-create', function () {
-    return view('user-create');
+    if (Auth::user()->role_id == 1){
+        return view('user-create');
+    } else {
+        return abort(401);
+    }
 })->middleware(['auth', 'verified'])->name('user-create');
 
+Route::get('/company-create', function () {
+    if (Auth::user()->role_id == 1){
+        return view('company-create');
+    } else {
+        return abort(401);
+    }
+})->middleware(['auth', 'verified'])->name('company-create');
+
 Route::get('/company/{company}', function (\App\Models\Company $company) {
-    return view('company')->with(compact('company'));
+    if (Auth::user()->role_id == 1){
+        return view('company')->with(compact('company'));
+    } else {
+        return abort(401);
+    }
 })->middleware(['auth', 'verified'])->name('company');
+
+Route::get('/product/{product}', function (\App\Models\Product $product) {
+    if (Auth::user()->role_id == 1 || Auth::user()->role_id == 5){
+        return view('product')->with(compact('product'));
+    } else {
+        return abort(401);
+    }
+})->middleware(['auth', 'verified'])->name('product');
+
+Route::get('/product-create', function () {
+    if (Auth::user()->role_id == 1 || Auth::user()->role_id == 5){
+        return view('product-create');
+    } else {
+        return abort(401);
+    }
+})->middleware(['auth', 'verified'])->name('product-create');
+
+Route::get('/product-index/{product}', function (\App\Models\Product $product) {
+        return view('product-index')->with(compact('product'));
+})->name('product-index');
+
+Route::get('/maintenance_appointment/{maintenance_appointment}', function (\App\Models\Maintenance_appointment $maintenance_appointment) {
+    if (Auth::user()->role_id == 6){
+        return view('maintenance_appointment')->with(compact('maintenance_appointment'));
+    } else {
+        return abort(401);
+    }
+})->middleware(['auth', 'verified'])->name('maintenance_appointment');
 
 Route::get('/contactform', function () {
     return view('contactform');
 })->name('contactform');
 
 Route::get('/dashboard', function () {
-    return view('dashboard');
+    switch (Auth::user()->role_id) {
+        case 1:
+            return redirect(route('admin'));
+        case 2:
+            return redirect(route('klant'));
+        case 3:
+            return redirect(route('purchase'));
+        case 4:
+            return redirect(route('sales'));
+        case 5:
+            return redirect(route('finance'));
+        case 6:
+            return redirect(route('maintenance'));
+    }
+//    return view('dashboard');
 })->middleware(['auth', 'verified'])->name('dashboard');
 
-//TODO: check if user role is admin
 Route::get('/admin', function () {
     if (Auth::user()->role_id == 1) {
         return view('admin');

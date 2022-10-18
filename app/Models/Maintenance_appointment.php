@@ -18,6 +18,5 @@ class Maintenance_appointment extends Model
     public function getCompany()
     {
         return $this->belongsTo(Company::class, 'company_id', 'id');
-
     }
 }

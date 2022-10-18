@@ -23,6 +23,5 @@ class Company extends Model
     public function getUser()
     {
         return $this->belongsTo(User::class, 'contact_id', 'id');
-
     }
 }

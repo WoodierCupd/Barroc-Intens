@@ -1,5 +1,5 @@
 <div>
-    <iframe width="1920" height="250" id="gmap_canvas"
+    <iframe class="w-full" height="250"
             src="https://maps.google.com/maps?q=terheidenseweg%20350&t=k&z=13&ie=UTF8&iwloc=&output=embed"
             frameborder="0" scrolling="no" marginheight="0" marginwidth="0"></iframe>
     <div class="container">

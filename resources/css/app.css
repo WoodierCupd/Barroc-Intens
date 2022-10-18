@@ -133,6 +133,11 @@
 
 .right{
     padding-left: 100px;
+    padding-top: 20px;
+}
+
+.left{
+    padding-top: 20px;
 }
 
 .form-group label{

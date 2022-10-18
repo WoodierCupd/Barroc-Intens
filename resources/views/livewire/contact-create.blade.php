@@ -36,6 +36,14 @@
                                class="shadow-sm bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-white-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-gray dark:focus:ring-blue-500 dark:focus:border-blue-500 dark:shadow-sm-light"
                                placeholder="1234JW" pattern=[A-Z\sa-z]{2,7} required>
                     </div>
+{{--                    <div class="form-group">--}}
+{{--                        <label for="title" class="block mb-2 text-sm font-medium text-black-900 dark:text-black-300">Coffee machine:</label>--}}
+{{--                        <select name="machine" id="machine" class="shadow-sm bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-96 p-2.5 dark:bg-white-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-gray dark:focus:ring-blue-500 dark:focus:border-blue-500 dark:shadow-sm-light">--}}
+{{--                            @foreach($machines as $machine)--}}
+{{--                                <option value="{{$machine->id}}">{{$machine->name}}</option>--}}
+{{--                            @endforeach--}}
+{{--                        </select>--}}
+{{--                    </div>--}}
                     <div class="form-group">
                         <label for="phone_number" class="block mb-2 text-sm font-medium text-black-900 dark:text-black-300">Telefoonnummer:</label>
                         <input type="tel" id="phone_number" name="visitor_phonenumber"
@@ -67,7 +75,6 @@
                                 class="bg-barroc_yellow text-barroc_grey hover:text-barroc_yellow hover:bg-barroc_grey py-2 px-4 mx-2 rounded transition ease-in-out duration-150">Verstuur mail</button>
 
                     </div>
-
                 </form>
             </div>
         </div>

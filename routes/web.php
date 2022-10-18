@@ -57,7 +57,7 @@ Route::get('/company/{company}', function (\App\Models\Company $company) {
 })->middleware(['auth', 'verified'])->name('company');
 
 Route::get('/product/{product}', function (\App\Models\Product $product) {
-    if (Auth::user()->role_id == 1){
+    if (Auth::user()->role_id == 1 || Auth::user()->role_id == 5){
         return view('product')->with(compact('product'));
     } else {
         return abort(401);
@@ -65,7 +65,7 @@ Route::get('/product/{product}', function (\App\Models\Product $product) {
 })->middleware(['auth', 'verified'])->name('product');
 
 Route::get('/product-create', function () {
-    if (Auth::user()->role_id == 1){
+    if (Auth::user()->role_id == 1 || Auth::user()->role_id == 5){
         return view('product-create');
     } else {
         return abort(401);

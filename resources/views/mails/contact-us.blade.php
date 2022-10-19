@@ -1,3 +1,3 @@
 <div>
-    Name: {{ $data }}
+    This is a test mail!
 </div>

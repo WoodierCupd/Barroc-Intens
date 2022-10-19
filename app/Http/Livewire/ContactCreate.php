@@ -2,15 +2,25 @@
 
 namespace App\Http\Livewire;
 
+use App\Mail\ContactUs;
 use App\Models\Product;
+use Illuminate\Support\Facades\Mail;
 use Livewire\Component;
 
 class ContactCreate extends Component
 {
-    public $machines;
+    public $name;
+    public $email;
+    public $companyName;
+    public $postalCode;
+    public $phoneNumber;
+    public $titel;
+    public $mail;
 
-    public function mount(){
-        $this->machines = Product::all()->where('product_category_id', '1');
+    public function submit(){
+        Mail::to('CoffeeAddicted@gmail.nl')->send(new ContactUs());
+
+        return 'Email sent Successfully';
     }
 
     public function render()

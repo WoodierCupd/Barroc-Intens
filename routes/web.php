@@ -156,6 +156,4 @@ Route::get('/maintenance', function () {
     }
 })->middleware(['auth', 'verified'])->name('maintenance');
 
-Route::get('/send/email', [MailController::class, 'contactUs']);
-
 require __DIR__ . '/auth.php';

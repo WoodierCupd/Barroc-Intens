@@ -20,7 +20,7 @@ class ContactCreate extends Component
     public function submit(){
         Mail::to('CoffeeAddicted@gmail.nl')->send(new ContactUs());
 
-        return 'Email sent Successfully';
+        dd('It works');
     }
 
     public function render()

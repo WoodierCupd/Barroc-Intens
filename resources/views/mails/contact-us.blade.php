@@ -1,0 +1,3 @@
+<div>
+    Name: {{ $data }}
+</div>

@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\MailController;
 use App\Models\Role;
 use Illuminate\Support\Facades\Route;
 
@@ -154,5 +155,7 @@ Route::get('/maintenance', function () {
         return abort(401);
     }
 })->middleware(['auth', 'verified'])->name('maintenance');
+
+Route::get('/send/email', [MailController::class, 'contactUs']);
 
 require __DIR__ . '/auth.php';

@@ -9,6 +9,7 @@ use Livewire\Component;
 
 class ContactCreate extends Component
 {
+    public $data;
     public $name;
     public $email;
     public $companyName;
@@ -18,9 +19,16 @@ class ContactCreate extends Component
     public $mail;
 
     public function submit(){
-        Mail::to('CoffeeAddicted@gmail.nl')->send(new ContactUs());
-
-        dd('It works');
+        $this->data = [
+          'name' => $this->name,
+          'email' => $this->email,
+          'companyName' => $this->companyName,
+          'postalCode' => $this->postalCode,
+          'phoneNumber' => $this->phoneNumber,
+          'title' => $this->titel,
+          'mail' => $this->mail,
+        ];
+        Mail::to($this->email)->send(new ContactUs($this->data));
     }
 
     public function render()

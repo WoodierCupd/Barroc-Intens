@@ -143,14 +143,9 @@
 .form-group button{
     width: 600px;
     margin-top: 20px;
-    background-color: #fdd716;
-
 }
 
-.form-group button:hover{
-    cursor: pointer;
-    background-color: darkorange;
-}
+
 
 .h1_contact{
     font-family: 'Roboto';
@@ -173,4 +168,18 @@
 .p_msg{
     margin-left: 30px;
     margin-top: 40px;
+}
+
+.right{
+    padding-left: 100px;
+    padding-top: 20px;
+}
+
+.left{
+    padding-top: 20px;
+}
+
+.form-group label{
+    padding-bottom: 1px;
+    padding-top: 7px;
 }

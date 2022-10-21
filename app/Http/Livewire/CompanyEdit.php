@@ -51,6 +51,11 @@ class CompanyEdit extends Component
         session()->flash('message', 'Company successfully updated.');
     }
 
+    public function delete(){
+        $this->company->delete();
+        return redirect()->to(route('admin'));
+    }
+
     public function render()
     {
         return view('livewire.company-edit');

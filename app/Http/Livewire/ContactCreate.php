@@ -28,7 +28,7 @@ class ContactCreate extends Component
           'title' => $this->titel,
           'mail' => $this->mail,
         ];
-        Mail::to($this->email)->send(new ContactUs($this->data));
+        Mail::to('support@barroc.com')->send(new ContactUs($this->data));
     }
 
     public function render()

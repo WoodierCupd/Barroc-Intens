@@ -29,7 +29,7 @@ class ContactUs extends Mailable
      */
     public function build()
     {
-        return $this->from('TheLocalCoffeeShop@gmail.com')->subject('Contact us')
+        return $this->from('admin@barroc.com')->subject('Contact us')
             ->view('mails.contact-us');
     }
 }

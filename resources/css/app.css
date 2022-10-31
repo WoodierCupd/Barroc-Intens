@@ -97,7 +97,7 @@
     }
 
     .product__grid {
-        @apply grid;
+        @apply grid gap-x-2;
         grid-template-columns: 5fr 7fr !important;
         grid-template-rows: 1fr 1fr !important;
         grid-column-start: 2 !important;
@@ -109,6 +109,16 @@
         font-size: 50px;
         margin: 0 0 20px 0;
 
+    }
+
+    .product__description {
+
+    }
+
+    .product__btn {
+        @apply block bg-mettalic-yellow max-w-fit text-xs font-extrabold;
+        padding: 14px 20px;
+        font-family: 'BigShoulderDisplay';
     }
 
     .section {

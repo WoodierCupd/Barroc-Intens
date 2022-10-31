@@ -4,6 +4,7 @@ namespace App\Http\Livewire;
 
 use App\Models\Role;
 use App\Models\User;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
 use Livewire\Component;
 
@@ -32,7 +33,13 @@ class UserCreate extends Component
 
         $this->user->save();
 
-        return redirect()->to(route('admin'));
+        if (Auth::user()->role_id = 4){
+            session()->flash('message', "Het account voor '$this->name' is succesvol aangemaakt!");
+            return view('user-create');
+
+        } else{
+            return redirect()->to(route('admin'));
+        }
     }
 
     public function render()

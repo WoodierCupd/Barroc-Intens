@@ -22,9 +22,6 @@ Route::get('/', function () {
     return view('home', ['machines' => $machines]);
 })->name('home');
 
-Route::get('/notes', function () {
-    return view('notes');
-})->middleware(['auth', 'verified'])->name('notes');
 Route::get('/user/{user}', function (\App\Models\User $user) {
     if (Auth::user()->role_id == 1){
         return view('user')->with(compact('user'));

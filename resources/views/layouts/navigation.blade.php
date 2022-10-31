@@ -35,7 +35,7 @@
                     @endif
                     @if(Auth::user()->role_id == '4')
                         <x-nav-link :href="route('sales')" :active="request()->routeIs('sales')">
-                            {{ __('sales') }}
+                            {{ __('Sales') }}
                         </x-nav-link>
                     @endif
                     @if(Auth::user()->role_id == '5')
@@ -48,9 +48,6 @@
                             {{ __('Maintenance') }}
                         </x-nav-link>
                     @endif
-                    <x-nav-link :href="route('notes')" :active="request()->routeIs('notes')">
-                            {{ __('Notes') }}
-                    </x-nav-link>
                 </div>
             </div>
 

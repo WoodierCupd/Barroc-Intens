@@ -3,17 +3,47 @@
 <html>
 
 <head>
-    <title>Contact verzoek</title>
+    <title>Contact</title>
+    <style>
+        body{
+            margin: 0 auto;
+            width: 80%;
+        }
+        table, td, th {
+            border: 1px solid;
+        }
+
+        table {
+            border-collapse: collapse;
+        }
+    </style>
 </head>
 
 <body>
 
 <div>
-    <p>Naam: {{$data['name']}}</p>
-    <p>Bedrijfs naam: {{$data['companyName']}}</p>
-    <p>Telefoon nummer: {{$data['phoneNumber']}}</p>
-    <p>PostCode: {{$data['postalCode']}}</p>
-    <p>Email: {{$data['email']}}</p>
+    <table>
+        <tr>
+            <th>Naam</th>
+            <td>{{$data['name']}}</td>
+        </tr>
+        <tr>
+            <th>Bedrijfs naam</th>
+            <td>{{$data['companyName']}}</td>
+        </tr>
+        <tr>
+            <th>Telefoon nummer</th>
+            <td>{{$data['phoneNumber']}}</td>
+        </tr>
+        <tr>
+            <th>Postcode</th>
+            <td>{{$data['postalCode']}}</td>
+        </tr>
+        <tr>
+            <th>Email</th>
+            <td>{{$data['email']}}</td>
+        </tr>
+    </table>
 </div>
 <div>
     <h1>{{$data['title']}}</h1>

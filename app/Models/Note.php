@@ -7,7 +7,6 @@ use Illuminate\Database\Eloquent\Model;
 
 class Note extends Model
 {
-    use HasNotes;
     protected $table = 'notes';
     protected $fillable = [
         'note',

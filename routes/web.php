@@ -41,6 +41,14 @@ Route::get('/user-create', function () {
     }
 })->middleware(['auth', 'verified'])->name('user-create');
 
+Route::get('/note-create', function () {
+    if (Auth::user()->role_id == 4){
+        return view('note-create');
+    } else {
+        return abort(401);
+    }
+})->middleware(['auth', 'verified'])->name('note-create');
+
 Route::get('/company-create', function () {
     if (Auth::user()->role_id == 1){
         return view('company-create');
@@ -64,6 +72,14 @@ Route::get('/product/{product}', function (\App\Models\Product $product) {
         return abort(401);
     }
 })->middleware(['auth', 'verified'])->name('product');
+
+Route::get('/note/{note}', function (\App\Models\Note $note) {
+    if (Auth::user()->role_id == 4){
+        return view('note')->with(compact('note'));
+    } else {
+        return abort(401);
+    }
+})->middleware(['auth', 'verified'])->name('note');
 
 Route::get('/product-create', function () {
     if (Auth::user()->role_id == 1 || Auth::user()->role_id == 5){
@@ -148,7 +164,7 @@ Route::get('/finance', function () {
     }
 })->middleware(['auth', 'verified'])->name('finance');
 
-Route::get('/maintenance', function () {
+Route::get('/mazintenance', function () {
     if (Auth::user()->role_id == 6) {
         return view('maintenance');
     } else {

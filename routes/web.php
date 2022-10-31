@@ -26,7 +26,7 @@ Route::get('/notes', function () {
     return view('notes');
 })->middleware(['auth', 'verified'])->name('notes');
 Route::get('/user/{user}', function (\App\Models\User $user) {
-    if (Auth::user()->role_id == 1){
+    if (Auth::user()->role_id == 1 || Auth::user()->role_id == 4){
         return view('user')->with(compact('user'));
     } else {
         return abort(401);
@@ -34,7 +34,7 @@ Route::get('/user/{user}', function (\App\Models\User $user) {
 })->middleware(['auth', 'verified'])->name('user');
 
 Route::get('/user-create', function () {
-    if (Auth::user()->role_id == 1){
+    if (Auth::user()->role_id == 1 || Auth::user()->role_id == 4){
         return view('user-create');
     } else {
         return abort(401);

@@ -5,7 +5,6 @@
                 <a href="{{route('product-index', $machine->id)}}">
                     <img src="{{$machine->image_path}}" alt="machine">
                     <p class="text-red-600 text-center font-bold text-2xl">{{$machine->name}}</p>
-                    <p class="text-center">Only €{{$machine->price}} Montly</p>
                 </a>
             </div>
         @endforeach

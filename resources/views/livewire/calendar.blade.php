@@ -30,7 +30,7 @@
             var calendar = new Calendar(calendarEl, {
                 events: JSON.parse(data),
                 dateClick(info)  {
-                    var title = prompt('Enter Event Title');
+                    var title = prompt('Afspraak: ');
                     var date = new Date(info.dateStr + 'T00:00:00');
                     if(title != null && title != ''){
                         calendar.addEvent({
@@ -40,9 +40,9 @@
                         });
                         var eventAdd = {title: title,start: date};
                     @this.addevent(eventAdd);
-                        alert('Great. Now, update your database...');
+                        alert('Gelukt!');
                     }else{
-                        alert('Event Title Is Required');
+                        alert('Vul iets in:');
                     }
                 },
                 editable: true,

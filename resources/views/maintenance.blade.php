@@ -12,6 +12,11 @@
                     <h1 class="font-bold text-3xl">Maintenance appointments</h1>
                     <livewire:maintenance-appointments/>
                 </div>
+                <div class="p-6 bg-white border-b border-gray-200">
+                    <h1 class="font-bold text-3xl">Maintenance kalender</h1>
+                    <livewire:calendar/>
+                    @stack('scripts')
+                </div>
             </div>
         </div>
     </div>

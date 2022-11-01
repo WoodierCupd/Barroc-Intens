@@ -161,7 +161,7 @@ Route::get('/finance', function () {
     }
 })->middleware(['auth', 'verified'])->name('finance');
 
-Route::get('/mazintenance', function () {
+Route::get('/maintenance', function () {
     if (Auth::user()->role_id == 6) {
         return view('maintenance');
     } else {

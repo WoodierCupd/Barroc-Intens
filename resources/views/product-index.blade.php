@@ -12,7 +12,7 @@
                 </div>
                 <div class="product__description">
                     <p>{{ $product->description }}</p>
-                    <a href="{{route('contactform')}}" class="product__btn">Vraag een offerte aan!</a>
+                    <a href="mailto:sales@barrocintens.nl?subject={{ str_replace(" ", "%20", $product->name) }}" class="product__btn">Vraag een offerte aan!</a>
                 </div>
             </div>
         </div>

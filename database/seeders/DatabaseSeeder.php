@@ -5,6 +5,7 @@ namespace Database\Seeders;
 // use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use App\Models\Company;
 use App\Models\Maintenance_appointment;
+use App\Models\Note;
 use App\Models\Product;
 use App\Models\Product_category;
 use App\Models\Role;
@@ -80,6 +81,7 @@ class DatabaseSeeder extends Seeder
         foreach ($companies as $company){
             if (rand(0, 1) == 1){
                 Maintenance_appointment::factory()->create(['company_id' => $company->id]);
+                Note::factory()->sequence(['company_id' => $company->id], ['author_id' => 1])->create();
             }
         }
 

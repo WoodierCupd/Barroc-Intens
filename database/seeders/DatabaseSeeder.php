@@ -68,7 +68,7 @@ class DatabaseSeeder extends Seeder
 //        Maakt users aan
         $customers = User::factory(20)->create(['role_id' => $klant->id]);
         User::factory(3)->create(['role_id' => $purchase->id]);
-        User::factory(3)->create(['role_id' => $sales->id]);
+        $sales = User::factory(3)->create(['role_id' => $sales->id]);
         User::factory(3)->create(['role_id' => $finance->id]);
         User::factory(3)->create(['role_id' => $maintenance->id]);
 
@@ -81,7 +81,7 @@ class DatabaseSeeder extends Seeder
         foreach ($companies as $company){
             if (rand(0, 1) == 1){
                 Maintenance_appointment::factory()->create(['company_id' => $company->id]);
-                Note::factory()->create(['company_id' => $company->id, 'author_id' => $company->getUser->id]);
+                Note::factory()->create(['company_id' => $company->id, 'author_id' => $sales->random()]);
             }
         }
 

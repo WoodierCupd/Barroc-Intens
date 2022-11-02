@@ -32,14 +32,9 @@ class UserCreate extends Component
         $this->user->password = Hash::make($this->password);
 
         $this->user->save();
+        session()->flash('message', "Het account voor '$this->name' is succesvol aangemaakt!");
+        return redirect()->to(route('dashboard'));
 
-        if (Auth::user()->role_id = 4){
-            session()->flash('message', "Het account voor '$this->name' is succesvol aangemaakt!");
-            return view('user-create');
-
-        } else{
-            return redirect()->to(route('admin'));
-        }
     }
 
     public function render()

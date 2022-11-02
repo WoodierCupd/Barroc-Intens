@@ -3,6 +3,8 @@
 use App\Http\Controllers\MailController;
 use App\Models\Role;
 use Illuminate\Support\Facades\Route;
+use App\Http\Livewire\Calendar;
+use App\Models\Event;
 
 /*
 |--------------------------------------------------------------------------
@@ -161,12 +163,16 @@ Route::get('/finance', function () {
     }
 })->middleware(['auth', 'verified'])->name('finance');
 
-Route::get('/mazintenance', function () {
+Route::get('/maintenance', function () {
     if (Auth::user()->role_id == 6) {
         return view('maintenance');
     } else {
         return abort(401);
     }
 })->middleware(['auth', 'verified'])->name('maintenance');
+
+// Route::view('/', 'home');
+
+// Livewire::component('calendar', Calendar::class);
 
 require __DIR__ . '/auth.php';

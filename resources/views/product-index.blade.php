@@ -15,7 +15,7 @@
                     @auth()
                         <a href="mailto:sales@barrocintens.nl?subject={{ str_replace(" ", "%20", $product->name) }}" class="product__btn">Vraag een offerte aan!</a>
                     @else
-                        <p class="italic text-red-600">Je kan alleen producten kopen als je een account aanvraagt en de BKR check haalt.</p>
+                        <p class="italic text-red-600">Je kan alleen producten huren als je een account aanvraagt en de BKR check haalt.</p>
                     @endauth
                 </div>
             </div>

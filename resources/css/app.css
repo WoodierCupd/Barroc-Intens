@@ -99,19 +99,14 @@
     .product__grid {
         @apply grid gap-x-2;
         grid-template-columns: 5fr 7fr !important;
-        grid-template-rows: 1fr 1fr !important;
-        grid-column-start: 2 !important;
+        grid-template-rows: minmax(min-content, max-content) minmax(min-content, max-content) !important;
 
     }
 
-    .product__title {
+    .product__name {
         @apply col-start-2 uppercase font-extrabold;
         font-size: 50px;
         margin: 0 0 20px 0;
-
-    }
-
-    .product__description {
 
     }
 

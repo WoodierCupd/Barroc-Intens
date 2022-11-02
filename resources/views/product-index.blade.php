@@ -4,7 +4,7 @@
     <div class="container">
         <div class="section">
             <div class="product__grid">
-                <div class="product__title">
+                <div class="product__name">
                     <h2>{{ $product->name }}</h2>
                 </div>
                 <div class="product__image">

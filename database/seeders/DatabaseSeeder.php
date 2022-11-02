@@ -81,7 +81,7 @@ class DatabaseSeeder extends Seeder
         foreach ($companies as $company){
             if (rand(0, 1) == 1){
                 Maintenance_appointment::factory()->create(['company_id' => $company->id]);
-                Note::factory()->sequence(['company_id' => $company->id], ['author_id' => 1])->create();
+                Note::factory()->create(['company_id' => $company->id, 'author_id' => $company->getUser->id]);
             }
         }
 

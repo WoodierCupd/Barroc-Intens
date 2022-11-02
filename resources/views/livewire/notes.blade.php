@@ -14,9 +14,9 @@
             <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700">
                 <td scope="row" class="py-4 px-6 font-medium text-gray-900 whitespace-nowrap dark:text-white">{{$note->id}}</td>
                 <td class="py-4 px-6">{{$note->date}}</td>
-                <td class="py-4 px-6"></td>
-                <td class="py-4 px-6"></td>
-                <td class="py-4 px-6">{{route('note', $note->id)}}</td>
+                <td class="py-4 px-6">{{$note->getCompany->name}}</td>
+                <td class="py-4 px-6">{{$note->getAuthor->name}}</td>
+                <td class="py-4 px-6"><a href="{{route('note', $note->id)}}">Edit</a></td>
             </tr>
         @endforeach
         </tbody>

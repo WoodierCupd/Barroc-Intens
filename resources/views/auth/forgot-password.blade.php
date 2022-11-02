@@ -7,7 +7,7 @@
         </x-slot>
 
         <div class="mb-4 text-sm text-gray-600">
-            {{ __('Forgot your password? No problem. Just let us know your email address and we will email you a password reset link that will allow you to choose a new one.') }}
+            {{ __('Hai Nieuwe klant! We hebben voor U een tijdelijk wachtwoord aangemaakt via deze pagina kunt U Uw wachtwoord aanpassen. Dankuwel voor het kiezen van Barroc intens!') }}
         </div>
 
         <!-- Session Status -->
@@ -25,9 +25,9 @@
                 <x-input-error :messages="$errors->get('email')" class="mt-2" />
             </div>
 
-            <div class="flex items-center justify-end mt-4">
+            <div class="flex items-center justify-start mt-4">
                 <x-primary-button>
-                    {{ __('Email Password Reset Link') }}
+                    {{ __('Verander je wachtwoord') }}
                 </x-primary-button>
             </div>
         </form>

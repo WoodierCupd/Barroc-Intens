@@ -111,13 +111,8 @@
     }
 
     .product__btn {
-        @apply block bg-mettalic-yellow max-w-fit text-xs font-extrabold;
         padding: 14px 20px;
         font-family: 'BigShoulderDisplay';
-    }
-
-    .section {
-        padding: 60px 0;
     }
 }
 

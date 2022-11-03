@@ -139,6 +139,19 @@
     background-color: #FDD716;
 }
 
+.searchbar{
+    height: fit-content;
+    width: 25%;
+    border: none;
+    background-color: #FDD716;
+}
+
+.search-top{
+    justify-content: space-between;
+    align-items: flex-end;
+    display: flex;
+}
+
 .hero_bg{
     background-repeat: no-repeat;
     background-size: cover;

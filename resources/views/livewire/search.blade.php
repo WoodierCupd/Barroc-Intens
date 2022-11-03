@@ -1,6 +1,10 @@
 <div>
     <div class="container mx-auto bg-white">
-        <input type="text" wire:model="searchTerm"/>
+        <div class="search-top mt-24 mb-10">
+            <h1 class="text-5xl font-extrabold">Koffie machines</h1>
+            <input class="searchbar rounded" placeholder="Zoek.." type="text" wire:model="searchTerm"/>
+        </div>
+
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
             @foreach($products as $i)
                 <div class="grid-item-coffee">

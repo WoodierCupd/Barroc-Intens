@@ -2,6 +2,7 @@
 
 namespace App\Http\Livewire;
 
+use App\Models\Product;
 use Livewire\Component;
 
 class Search extends Component
@@ -16,8 +17,7 @@ class Search extends Component
     public function render()
     {
         $searchTerm = '%' . $this->searchTerm . '%';
-        dd('$searchTerm');
-        $this->product = Product::where('name', 'LIKE', $searchTerm)->get();
+        $this->products = Product::where('name', 'LIKE', $searchTerm)->get();
         return view('livewire.search');
     }
 }

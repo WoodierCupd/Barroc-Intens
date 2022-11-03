@@ -5,8 +5,7 @@
     <x-hero/>
 
     <h1 class="text-5xl font-extrabold pl-10 my-6">Koffie machines:</h1>
-    @include('livewire.search') 
+    @livewire('search', ['products' => $machines])
     <x-footer/>
     @livewireScripts
-    @livewireAssets 
 </body>

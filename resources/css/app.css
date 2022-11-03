@@ -152,6 +152,10 @@
     display: flex;
 }
 
+.sticky a{
+    font-weight: bold;
+}
+
 .hero_bg{
     background-repeat: no-repeat;
     background-size: cover;

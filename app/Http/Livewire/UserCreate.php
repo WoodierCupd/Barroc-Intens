@@ -2,14 +2,18 @@
 
 namespace App\Http\Livewire;
 
+use App\Mail\UserCreated;
 use App\Models\Role;
 use App\Models\User;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\Mail;
+use Illuminate\Support\Str;
 use Livewire\Component;
 
 class UserCreate extends Component
 {
+    public $data;
     public $user;
     public $roles;
     public $name;
@@ -23,23 +27,29 @@ class UserCreate extends Component
         $this->role = 2;
     }
 
+
+
     public function submit(){
+
         $this->user = new User;
         $this->user->name = $this->name;
         $this->user->username = $this->username;
         $this->user->email = $this->email;
         $this->user->role_id = $this->role;
-        $this->user->password = Hash::make($this->password);
-
+        $this->user->password = Hash::make(Str::random(8));
         $this->user->save();
+
+        Mail::to('support@barroc.com')->send(new UserCreated($this->email));
 
         if (Auth::user()->role_id = 4){
             session()->flash('message', "Het account voor '$this->name' is succesvol aangemaakt!");
             return view('user-create');
-
         } else{
             return redirect()->to(route('admin'));
         }
+
+
+
     }
 
     public function render()

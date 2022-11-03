@@ -10,15 +10,16 @@ use Illuminate\Queue\SerializesModels;
 class UserCreated extends Mailable
 {
     use Queueable, SerializesModels;
+    public $email;
 
     /**
      * Create a new message instance.
      *
      * @return void
      */
-    public function __construct($data)
+    public function __construct($email)
     {
-        $this->data = $data;
+        $this->email = $email;
     }
 
     /**
@@ -29,6 +30,6 @@ class UserCreated extends Mailable
     public function build()
     {
         return $this->from('sales@barroc.com')->subject('Change password')
-            ->view('mails.contact-us');
+            ->view('mails.change-password');
     }
 }

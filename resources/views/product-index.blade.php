@@ -1,22 +1,7 @@
 <x-head/>
 <x-header/>
 <body>
-    <div class="container">
-        <div class="section">
-            <div class="product__grid">
-                <div class="product__title">
-                    <h2>{{ $product->name }}</h2>
-                </div>
-                <div class="product__image">
-                    <img src="{{ $product->image_path }}" alt="">
-                </div>
-                <div class="product__description">
-                    <p>{{ $product->description }}</p>
-                    <a href="mailto:sales@barrocintens.nl?subject={{ str_replace(" ", "%20", $product->name) }}" class="product__btn">Vraag een offerte aan!</a>
-                </div>
-            </div>
-        </div>
-    </div>
+    @livewire('quotation-request', ['product' => $product])
 </body>
 <x-footer/>
 @livewireScripts

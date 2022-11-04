@@ -24,6 +24,11 @@ Route::get('/', function () {
     return view('home', ['machines' => $machines]);
 })->name('home');
 
+Route::get('/products', function () {
+    $machines = \App\Models\Product::all()->where('product_category_id', 1);
+    return view('products', ['machines' => $machines]);
+})->name('products');
+
 Route::get('/user/{user}', function (\App\Models\User $user) {
     if (Auth::user()->role_id == 1 || Auth::user()->role_id == 4){
         return view('user')->with(compact('user'));

@@ -3,7 +3,6 @@
     <x-header/>
 
     <x-hero/>
-    @livewire('search', ['products' => $machines])
 
 
     <x-footer/>

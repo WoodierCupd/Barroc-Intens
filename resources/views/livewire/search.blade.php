@@ -1,7 +1,7 @@
 <div>
     <div class="container mx-auto bg-white">
         <div class="search-top mt-24 mb-10">
-            <h1 class="text-5xl font-extrabold">Koffie machines</h1>
+            <h1 class="text-5xl font-extrabold">Producten</h1>
             <input class="searchbar rounded" placeholder="Zoek.." type="text" wire:model="searchTerm"/>
         </div>
 

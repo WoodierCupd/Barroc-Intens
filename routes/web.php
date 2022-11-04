@@ -25,8 +25,8 @@ Route::get('/', function () {
 })->name('home');
 
 Route::get('/products', function () {
-    $products = \App\Models\Product::all()->where('product_category_id', 1);
-    return view('home', ['products' => $products]);
+    $machines = \App\Models\Product::all()->where('product_category_id', 1);
+    return view('products', ['machines' => $machines]);
 })->name('products');
 
 Route::get('/user/{user}', function (\App\Models\User $user) {

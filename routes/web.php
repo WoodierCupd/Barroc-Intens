@@ -40,6 +40,14 @@ Route::get('/user-create', function () {
     }
 })->middleware(['auth', 'verified'])->name('user-create');
 
+Route::get('/maintenance-appointments-create', function () {
+    if (Auth::user()->role_id == 6){
+        return view('maintenance-appointments-create');
+    } else {
+        return abort(401);
+    }
+})->middleware(['auth', 'verified'])->name('maintenance-appointments-create');
+
 Route::get('/note-create', function () {
     if (Auth::user()->role_id == 4){
         return view('note-create');

@@ -4,6 +4,7 @@
             <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg">
                 <div class="p-6 bg-white border-b border-gray-200">
                     <h1 class="text-2xl font-extrabold">Maintenance appointment from '{{$maintenance_appointment->getCompany->name}}'</h1>
+                    <p class="text-xl font-semibold">Type: @if($maintenance_appointment->type == 0) <td class="py-4 px-6">Storingsaanvraag</td> @else <td class="py-4 px-6">Routinematig bezoek</td> @endif </p>
                     <p>{{$maintenance_appointment->remark}}</p>
                     <p class="text-xl font-semibold">appointment at: {{$maintenance_appointment->date_added}}</p>
                 </div>

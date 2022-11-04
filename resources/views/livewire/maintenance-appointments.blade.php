@@ -5,6 +5,7 @@
             <th scope="col" class="py-3 px-6">Id</th>
             <th scope="col" class="py-3 px-6">Creator</th>
             <th scope="col" class="py-3 px-6">Date</th>
+            <th scope="col" class="py-3 px-6">Type</th>
             <th scope="col" class="py-3 px-6">Detail page</th>
         </tr>
         </thead>
@@ -14,6 +15,11 @@
                 <td scope="row" class="py-4 px-6 font-medium text-gray-900 whitespace-nowrap dark:text-white">{{$maintenance_appointment->id}}</td>
                 <td class="py-4 px-6">{{$maintenance_appointment->getCompany->name}}</td>
                 <td class="py-4 px-6">{{$maintenance_appointment->date_added}}</td>
+                @if($maintenance_appointment->type == 0)
+                   <td class="py-4 px-6">Storingsaanvraag</td>
+                @else
+                    <td class="py-4 px-6">Routinematig bezoek</td>
+                @endif
                 <td class="py-4 px-6"><a href="{{route('maintenance_appointment', $maintenance_appointment->id)}}">Detail page</a></td>
             </tr>
         @endforeach

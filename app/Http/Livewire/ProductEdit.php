@@ -35,7 +35,7 @@ class ProductEdit extends Component
 
     public function delete(){
         $this->product->delete();
-        return redirect()->to(route('admin'));
+        return redirect()->to(route('dashboard'));
     }
 
     public function render()

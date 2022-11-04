@@ -24,11 +24,11 @@
         var maintenance_appointments = {!! json_encode($maintenance_appointments) !!};
         var events = [];
         maintenance_appointments.forEach(function (maintenance_appointment) {
-            console.log(maintenance_appointment)
             events.push({
                 title: `appointment: ${maintenance_appointment['id']}`,
                 start: maintenance_appointment['date_added'],
-                end: maintenance_appointment['date_added']
+                end: maintenance_appointment['date_added'],
+                remark: maintenance_appointment['remark']
             })
         })
         document.addEventListener('DOMContentLoaded', function() {
@@ -37,8 +37,9 @@
                 initialView: 'dayGridMonth',
                 timeZone: 'local',
                 events: events,
-                eventClick: () => {
-                    alert(`click event (Not finished)`);
+                eventClick: (events) => {
+                    console.log(events['event']['_def']['extendedProps']['remark'])
+                    alert(`${events['event']['_def']['title']}\n${events['event']['_def']['extendedProps']['remark']}`);
                 }
             });
             calendar.render();

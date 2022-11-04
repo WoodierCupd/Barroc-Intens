@@ -7,12 +7,12 @@
         margin: 10px;
         width: 100%;
         height: 610px;
-        border:2px solid black;
     }
 </style>
+<link href='https://cdn.jsdelivr.net/npm/fullcalendar@5.3.1/main.min.css' rel='stylesheet' />
 
 <div>
-    <div id='calendar-container' wire:ignore>
+    <div id='calendar-container'>
         <div id='calendar'></div>
     </div>
 </div>
@@ -21,59 +21,27 @@
     <script src='https://cdn.jsdelivr.net/npm/fullcalendar@5.3.1/main.min.js'></script>
 
     <script>
-        document.addEventListener('livewire:load', function() {
-            var Calendar = FullCalendar.Calendar;
-            var Draggable = FullCalendar.Draggable;
+        var maintenance_appointments = {!! json_encode($maintenance_appointments) !!};
+        var events = [];
+        maintenance_appointments.forEach(function (maintenance_appointment) {
+            console.log(maintenance_appointment)
+            events.push({
+                title: `appointment: ${maintenance_appointment['id']}`,
+                start: maintenance_appointment['date_added'],
+                end: maintenance_appointment['date_added']
+            })
+        })
+        document.addEventListener('DOMContentLoaded', function() {
             var calendarEl = document.getElementById('calendar');
-            var checkbox = document.getElementById('drop-remove');
-            var data =   @this.events;
-            var calendar = new Calendar(calendarEl, {
-                events: JSON.parse(data),
-                dateClick(info)  {
-                    var title = prompt('Afspraak: ');
-                    var date = new Date(info.dateStr + 'T00:00:00');
-                    if(title != null && title != ''){
-                        calendar.addEvent({
-                            title: title,
-                            start: date,
-                            allDay: true
-                        });
-                        var eventAdd = {title: title,start: date};
-                    @this.addevent(eventAdd);
-                        alert('Gelukt!');
-                    }else{
-                        alert('Vul iets in:');
-                    }
-                },
-                editable: true,
-                weekends: false,
-                selectable: true,
-                displayEventTime: false,
-                droppable: true, // this allows things to be dropped onto the calendar
-                drop: function(info) {
-                    // is the "remove after drop" checkbox checked?
-                    if (checkbox.checked) {
-                        // if so, remove the element from the "Draggable Events" list
-                        info.draggedEl.parentNode.removeChild(info.draggedEl);
-                    }
-                },
-                eventDrop: info => @this.eventDrop(info.event, info.oldEvent),
-                loading: function(isLoading) {
-                    if (!isLoading) {
-                        // Reset custom events
-                        this.getEvents().forEach(function(e){
-                            if (e.source === null) {
-                                e.remove();
-                            }
-                        });
-                    }
+            var calendar = new FullCalendar.Calendar(calendarEl, {
+                initialView: 'dayGridMonth',
+                timeZone: 'local',
+                events: events,
+                eventClick: () => {
+                    alert(`click event (Not finished)`);
                 }
             });
             calendar.render();
-        @this.on(`refreshCalendar`, () => {
-            calendar.refetchEvents()
-        });
-        });
+        })
     </script>
-    <link href='https://cdn.jsdelivr.net/npm/fullcalendar@5.3.1/main.min.css' rel='stylesheet' />
 @endpush

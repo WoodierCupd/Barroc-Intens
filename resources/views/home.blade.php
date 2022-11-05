@@ -4,6 +4,7 @@
 
     <x-hero/>
 
+    @include('components.carousel', ['items' => $machines])
 
     <x-footer/>
     @livewireScripts

@@ -6,7 +6,7 @@
             </div>
             <div class=" flex justify-center items-center basis-2/3">
                 <a href="#" class="text-lg px-2 text-white"><button class="bg-black rounded py-2 px-2 hover:text-black hover:bg-yellow-500">Link 1</button> </a>
-                <a href="/products" class="text-lg px-2 text-white"><button class="bg-black rounded py-2 px-2 hover:text-black hover:bg-yellow-500">Products</button> </a>
+                <a href="/products" class="text-lg px-2 text-white"><button class="bg-black rounded py-2 px-2 hover:text-black hover:bg-yellow-500">Producten</button> </a>
                 <a href="#" class="text-lg px-2 text-white"><button class="bg-black rounded py-2 px-2 hover:text-black hover:bg-yellow-500">Link 3</button> </a>
             </div>
             <div class="flex justify-end items-center basis-1/6">

@@ -23,7 +23,7 @@
 
             <!-- Password -->
             <div class="mt-4">
-                <x-input-label for="password" :value="__('Password')" />
+                <x-input-label for="password" :value="__('Wachtwoord')" />
 
                 <x-text-input id="password" class="block mt-1 w-full" type="password" name="password" required />
 
@@ -32,7 +32,7 @@
 
             <!-- Confirm Password -->
             <div class="mt-4">
-                <x-input-label for="password_confirmation" :value="__('Confirm Password')" />
+                <x-input-label for="password_confirmation" :value="__('Bevestig wachtwoord')" />
 
                 <x-text-input id="password_confirmation" class="block mt-1 w-full"
                                     type="password"

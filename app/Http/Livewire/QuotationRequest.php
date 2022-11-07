@@ -20,13 +20,7 @@ class QuotationRequest extends Component
         } elseif (!Company::firstWhere('contact_id', 2)->bkr_checked){
             session()->flash('message', 'Je moet eerst de BKR check halen. Neem contact op met support.');
         } else {
-            $data = Product::all()->where('product_category_id', 1)->toArray();
-//            $beans = Product::all()->where('product_category_id', 2);
-            $pdf = Pdf::loadView('pdf.quotation', $data)->output();
-            return response()->streamDownload(
-                fn () => print($pdf),
-                "offerte.pdf"
-            );
+            return redirect()->to(route('downloadQuotation'));
         }
     }
 

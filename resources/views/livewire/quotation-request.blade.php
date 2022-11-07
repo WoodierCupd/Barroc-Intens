@@ -12,7 +12,7 @@
                 @auth()
                     <button wire:click="request" class="block bg-mettalic-yellow max-w-fit font-bold px-5 py-2 rounded-sm mt-2 shadow-lg">Vraag een offerte aan</button>
                 @else
-                    <p class="italic text-red-600">Je kan alleen producten huren als je een account aanvraagt en de BKR check haalt.</p>
+                    <p class="italic text-red-600">Je kan alleen een offerte aanvragen als je een account aanvraagt en de BKR check haalt.</p>
                 @endauth
             </div>
         </div>

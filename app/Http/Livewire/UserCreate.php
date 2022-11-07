@@ -38,10 +38,13 @@ class UserCreate extends Component
         $this->user->role_id = $this->role;
         $this->user->password = Hash::make(Str::random(8));
         $this->user->save();
+
+        Mail::to('support@barroc.com')->send(new UserCreated($this->email));
+
         session()->flash('message', "Het account voor '$this->name' is succesvol aangemaakt!");
         return redirect()->to(route('dashboard'));
 
-        Mail::to('support@barroc.com')->send(new UserCreated($this->email));
+
 
 
     }

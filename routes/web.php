@@ -1,7 +1,9 @@
 <?php
 
 use App\Http\Controllers\MailController;
+use App\Models\Product;
 use App\Models\Role;
+use Barryvdh\DomPDF\Facade\Pdf;
 use Illuminate\Support\Facades\Route;
 use App\Http\Livewire\Calendar;
 use App\Models\Event;
@@ -189,3 +191,9 @@ Route::get('/maintenance', function () {
 // Livewire::component('calendar', Calendar::class);
 
 require __DIR__ . '/auth.php';
+
+Route::get('/downloadQuotation',function (){
+    $data = Product::all()->where('product_category_id', 1);
+    $pdf = Pdf::loadView('pdf.quotation', compact('data'));
+    return $pdf->download('offerte.pdf');
+})->name('downloadQuotation');

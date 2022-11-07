@@ -5,7 +5,7 @@
             <p class=" py-10 text-white">Baroc Intens, bizar lekkere koffie! En goedkoop!</p>
             <div class="hero-buttons">
                 <button class="bg-barroc_yellow text-barroc_grey hover:text-barroc_yellow hover:bg-barroc_grey py-2 px-4 mx-2 rounded transition ease-in-out duration-150" >BESTEL KOFFIE</button>
-                <button class="bg-barroc_yellow text-barroc_grey hover:text-barroc_yellow hover:bg-barroc_grey py-2 px-4 mx-2 rounded transition ease-in-out duration-150" >HUUR MACHINE</button>
+                <a href="/products" class="bg-barroc_yellow text-barroc_grey hover:text-barroc_yellow hover:bg-barroc_grey py-2 px-4 mx-2 rounded transition ease-in-out duration-150" >HUUR MACHINE</a>
             </div>
         </div>
     </div>

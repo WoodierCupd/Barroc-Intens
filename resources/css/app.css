@@ -9,7 +9,7 @@
 
 @font-face {
     font-family: 'BigShoulderDisplay';
-    src: url('../../public/fonts/Roboto/Roboto-Regular.ttf');
+    src: url('../../public/fonts/BigShouldersDisplay/BigShouldersDisplay-Regular.ttf');
 }
 
 @layer footer {
@@ -230,3 +230,12 @@
     margin-top: 350px;
 }
 
+.carousel__title {
+    font-family: 'BigShoulderDisplay';
+    font-weight: 900;
+    font-size: 3rem;
+}
+
+section {
+    margin: 60px auto;
+}

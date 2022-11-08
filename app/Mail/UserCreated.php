@@ -29,7 +29,7 @@ class UserCreated extends Mailable
      */
     public function build()
     {
-        return $this->from('sales@barroc.com')->subject('Change password')
+        return $this->from('sales@barroc.com')->subject('Verander wachtwoord')
             ->view('mails.change-password');
     }
 }

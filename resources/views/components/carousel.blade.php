@@ -1,4 +1,4 @@
-<section class="splide container" aria-labelledby="carousel-heading" style="height: fit-content">
+<section class="splide container h-fit" aria-labelledby="carousel-heading">
     <h1 class="carousel__title">Onze koffieapparaten!</h1>
     <div class="splide__slider">
         <div class="splide__track">

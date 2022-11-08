@@ -18,7 +18,8 @@ class CustomInvoiceFactory extends Factory
     public function definition()
     {
         return [
-            'date' => Carbon::now();
+            'date' => Carbon::now(),
+            'paid_at' => null,
         ];
     }
 }

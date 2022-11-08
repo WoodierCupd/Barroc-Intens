@@ -4,6 +4,7 @@ namespace Database\Seeders;
 
 // use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use App\Models\Company;
+use App\Models\CustomInvoice;
 use App\Models\Maintenance_appointment;
 use App\Models\Note;
 use App\Models\Product;
@@ -82,6 +83,8 @@ class DatabaseSeeder extends Seeder
             if (rand(0, 1) == 1){
                 Maintenance_appointment::factory()->create(['company_id' => $company->id]);
                 Note::factory()->create(['company_id' => $company->id, 'author_id' => $sales->random()]);
+            } else {
+                CustomInvoice::factory()->create(['company_id' => $company->id]);
             }
         }
 

@@ -33,7 +33,7 @@
             <th scope="col">Id</th>
             <th scope="col">Naam</th>
             <th scope="col">Prijs (Maandelijks)</th>
-            <th scope="col">Categorie</th>
+{{--            <th scope="col">Categorie</th>--}}
         </tr>
         </thead>
         <tbody>
@@ -42,7 +42,7 @@
                 <td>{{$product->id}}</td>
                 <td>{{$product->name}}</td>
                 <td>{{$product->price}}</td>
-                <td>{{$product->getCategory->name}}</td>
+{{--                <td>{{$product->getCategory->name}}</td>--}}
             </tr>
         @endforeach
         </tbody>

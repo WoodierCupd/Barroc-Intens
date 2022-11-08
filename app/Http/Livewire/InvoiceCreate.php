@@ -9,6 +9,8 @@ class InvoiceCreate extends Component
 {
     public $companies;
     public $paid_at;
+    public $amount;
+    public $company;
 
     public function mount(){
         $this->companies = Company::all();

@@ -5,6 +5,7 @@
             <th scope="col" class="py-3 px-6">Id</th>
             <th scope="col" class="py-3 px-6">Date</th>
             <th scope="col" class="py-3 px-6">Paid</th>
+            <th scope="col" class="py-3 px-6">Amount</th>
             <th scope="col" class="py-3 px-6">Edit</th>
         </tr>
         </thead>
@@ -12,8 +13,9 @@
         @foreach ($invoices as $invoice)
             <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700">
                 <td scope="row" class="py-4 px-6 font-medium text-gray-900 whitespace-nowrap dark:text-white">{{$invoice->id}}</td>
-                <td scope="row" class="py-4 px-6 font-medium text-gray-900 whitespace-nowrap dark:text-white">{{$invoice->date}}</td>
-                <td scope="row" class="py-4 px-6 font-medium text-gray-900 whitespace-nowrap dark:text-white">{{($invoice->paid_at === null) ? 'Awaiting payment' : 'Paid'}}</td>
+                <td scope="row" class="py-4 px-6">{{$invoice->date}}</td>
+                <td scope="row" class="py-4 px-6">{{($invoice->paid_at === null) ? 'Awaiting payment' : 'Paid'}}</td>
+                <td scope="row" class="py-4 px-6">${{$invoice->amount}}</td>
                 <td class="py-4 px-6"><a href="{{route('invoice', $invoice->id)}}">Edit</a></td>
             </tr>
         @endforeach

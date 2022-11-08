@@ -13,5 +13,6 @@ class CustomInvoice extends Model
         'date',
         'paid_at',
         'company_id',
+        'amount',
     ];
 }

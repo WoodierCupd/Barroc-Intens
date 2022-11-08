@@ -20,6 +20,7 @@ class CustomInvoiceFactory extends Factory
         return [
             'date' => Carbon::now(),
             'paid_at' => null,
+            'amount' => fake()->randomFloat(2, 100, 250),
         ];
     }
 }

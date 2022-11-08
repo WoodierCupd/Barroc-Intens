@@ -1,11 +1,13 @@
 <x-head/>
-<body class="bg-white">
 <x-header/>
+<body class="bg-white">
+
 
 <x-hero/>
 <main>
     @include('components.carousel', ['items' => $machines])
 </main>
-<x-footer/>
+
 @livewireScripts
 </body>
+<x-footer/>

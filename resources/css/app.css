@@ -17,6 +17,7 @@
     footer {
         @apply bg-white font-roboto;
         padding: 60px 0 20px 0;
+        border-top: 1px solid #FDD716 !important;
     }
     .footer__top {
         @apply leading-7;
@@ -121,6 +122,8 @@
         @apply grid gap-x-7;
         grid-template-areas: "logo items cta";
         grid-template-columns: 200px 1fr 1fr;
+        background: #ffffff;
+        position: sticky;
     }
 
     .navbar__logo {
@@ -166,6 +169,22 @@
 
 }
 
+@layer about-us {
+    .about-us .container {
+        width: 50% !important;
+    }
+
+    .about-us h1{
+        font-family: BigShoulderDisplay;
+        font-weight: 900 !important;
+        font-size: 3rem !important;
+    }
+
+    .about-us p{
+        line-height: 25px;
+        font-family: Roboto;
+    }
+}
 /*hero styles*/
 
 .hero{

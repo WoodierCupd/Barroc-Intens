@@ -302,4 +302,6 @@ section {
     margin: 60px auto;
 }
 
-
+.js-cookie-consent{
+    z-index: 1;
+}

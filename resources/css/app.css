@@ -107,8 +107,13 @@
     .product__name {
         @apply col-start-2 uppercase font-extrabold;
         font-size: 50px;
+        font-family: BigShoulderDisplay;
         margin: 0 0 20px 0;
 
+    }
+
+    .product__description {
+        font-family: Roboto;
     }
 
     .product__btn {
@@ -241,7 +246,12 @@
     width: 600px;
 }
 .form-group button{
-    width: 600px;
+    font-size: 1.5rem;
+    line-height: 2rem;
+    font-weight: 800;
+    font-family: 'BigShoulderDisplay';
+    padding: 14px 20px;
+    background: #FDD716;
     margin-top: 20px;
 }
 
@@ -255,8 +265,12 @@
 
 }
 
-.contact {
+form .contact {
     margin: 30px 0;
+}
+
+.contact form{
+    font-family: Roboto;
 }
 
 .message{
@@ -275,15 +289,6 @@
 .p_msg{
     margin-left: 30px;
     margin-top: 40px;
-}
-
-.right{
-    padding-left: 100px;
-    padding-top: 20px;
-}
-
-.left{
-    padding-top: 20px;
 }
 
 .form-group label{

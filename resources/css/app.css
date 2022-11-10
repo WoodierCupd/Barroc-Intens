@@ -228,10 +228,6 @@
     background-color: rgba(0, 0, 0, 0.500);
 }
 
-.form-group{
-    width: 50px;
-}
-
 .form-group input{
     width: 600px;
 }
@@ -252,8 +248,15 @@
 
 
 .h1_contact{
-    font-family: 'Roboto';
-    margin-top: 20px;
+    font-family: BigShoulderDisplay;
+    font-size: 50px;
+    font-weight: 800;
+    text-transform: uppercase;
+
+}
+
+.contact {
+    margin: 30px 0;
 }
 
 .message{

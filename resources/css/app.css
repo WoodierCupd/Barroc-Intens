@@ -28,9 +28,14 @@
         @apply grid-rows-1 grid-cols-4;
     }
 
+    footer h1 {
+        font-family: BigShoulderDisplay;
+    }
+
     footer h2 {
         @apply text-3xl font-bold !important;
         margin: 20px 0 10px !important;
+        font-family: Roboto;
     }
 
     footer h3 {
@@ -50,6 +55,22 @@
     footer a:hover {
         text-decoration-color: black !important;
         transition: text-decoration-color .4s ease;
+    }
+
+    footer .footer__contact--btn {
+        font-size: 1.5rem;
+        line-height: 2rem;
+        font-weight: 800;
+        font-family: 'BigShoulderDisplay';
+        padding: 14px 20px;
+        background: #FDD716;
+
+    }
+
+    footer .footer__contact--btn:hover {
+        background: black;
+        color: #FDD716 !important;
+        transition: all ease .5s;
     }
 }
 
@@ -229,6 +250,31 @@
     background-image: url(https://media.istockphoto.com/photos/staff-working-behind-counter-in-busy-coffee-shop-picture-id900816038?k=20&m=900816038&s=612x612&w=0&h=PYTP1QdLaw2YuvrKZVe8nGgek6wa0CmYN4bRqjhYr8E=);
 }
 
+.hero__cta--btn {
+    font-size: 1.5rem;
+    line-height: 2rem;
+    font-weight: 800;
+    font-family: 'BigShoulderDisplay';
+    padding: 14px 20px;
+    background: #FDD716;
+}
+
+.hero__cta--btn:hover {
+    background: black;
+    color: #FDD716 !important;
+    transition: all ease .5s;
+}
+
+.hero__title {
+    font-family: BigShoulderDisplay;
+    color: white;
+    font-size: 100px;
+}
+
+.hero__description {
+    font-family: Roboto;
+}
+
 .filter{
     background-color: rgba(0, 0, 0, 0.500);
 }
@@ -254,8 +300,6 @@
     background: #FDD716;
     margin-top: 20px;
 }
-
-
 
 .h1_contact{
     font-family: BigShoulderDisplay;

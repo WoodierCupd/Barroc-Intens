@@ -208,7 +208,7 @@
 
     .about-us p{
         line-height: 25px;
-        font-family: Roboto;
+        font-family: Roboto, serif;
     }
 }
 /*hero styles*/
@@ -238,6 +238,11 @@
     justify-content: space-between;
     align-items: flex-end;
     display: flex;
+
+}
+
+.search-top h1 {
+    font-family: BigShoulderDisplay;
 }
 
 .sticky a{
@@ -356,4 +361,9 @@ section {
 
 .js-cookie-consent{
     z-index: 1;
+}
+
+
+.grid-item-coffee {
+    font-family: Roboto;
 }

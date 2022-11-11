@@ -1,5 +1,5 @@
 <div class="container">
-    <div class="section">
+    <section>
         <div class="product__name">
             <h2>{{ $product->name }}</h2>
         </div>

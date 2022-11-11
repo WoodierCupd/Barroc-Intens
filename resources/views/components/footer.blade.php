@@ -31,6 +31,10 @@
                 </div>
                 <div class="contact">
                     <h2>Contact</h2>
+                    <h3>Neem contact met ons op!</h3>
+                    <a class="footer__contact--btn" href="{{ route("contactform") }}">
+                        Contact
+                    </a>
                 </div>
             </div>
         </div>

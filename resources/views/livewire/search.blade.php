@@ -1,4 +1,4 @@
-<div>
+<div style="margin-bottom: 30px">
     <div class="container mx-auto bg-white">
         <div class="search-top mt-24 mb-10">
             <h1 class="text-5xl font-extrabold">Producten</h1>

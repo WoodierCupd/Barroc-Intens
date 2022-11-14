@@ -13,6 +13,7 @@ class Maintenance_appointment extends Model
         'company_id',
         'remark',
         'date_added',
+        'resposible',
     ];
 
     public function getCompany()

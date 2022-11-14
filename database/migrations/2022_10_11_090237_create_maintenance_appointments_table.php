@@ -20,6 +20,7 @@ return new class extends Migration
             $table->longText('remark');
             $table->dateTime('date_added');
             $table->integer('type');
+            $table->string('responsible');
             $table->timestamps();
         });
     }

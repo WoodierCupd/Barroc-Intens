@@ -15,7 +15,7 @@
 @layer footer {
 
     footer {
-        @apply bg-white font-roboto;
+        @apply bg-barroc_yellow font-roboto;
         padding: 60px 0 20px 0;
     }
     .footer__top {
@@ -282,5 +282,7 @@
 section {
     margin: 60px auto;
 }
+
+
 
 

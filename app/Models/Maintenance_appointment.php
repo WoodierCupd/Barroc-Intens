@@ -13,11 +13,16 @@ class Maintenance_appointment extends Model
         'company_id',
         'remark',
         'date_added',
-        'resposible',
+        'responsible',
     ];
 
     public function getCompany()
     {
         return $this->belongsTo(Company::class, 'company_id', 'id');
+    }
+
+    public function getUser()
+    {
+        return $this->belongsTo(User::class, 'responsible', 'id');
     }
 }

@@ -21,7 +21,7 @@
                 @else
                     <td class="py-4 px-6">Routinematig bezoek</td>
                 @endif
-                <td class="py-4 px-6">{{$maintenance_appointment->responsible->name}}</td>
+                <td class="py-4 px-6">{{$maintenance_appointment->getUser->name}}</td>
                 <td class="py-4 px-6"><a href="{{route('maintenance_appointment', $maintenance_appointment->id)}}">Detail page</a></td>
             </tr>
         @endforeach

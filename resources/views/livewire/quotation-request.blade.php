@@ -1,5 +1,5 @@
 <div class="container">
-    <section>
+    <div>
         <div class="product__name">
             <h2>{{ $product->name }}</h2>
         </div>
@@ -16,10 +16,10 @@
                 @endauth
             </div>
         </div>
+        @if (session()->has('message'))
+            <div class="bg-red-100 border-t border-b border-red-500 text-red-700 px-4 py-3 mb-2 mt-3" role="alert">
+                <p>{{ session('message') }}</p>
+            </div>
+        @endif
     </div>
-    @if (session()->has('message'))
-        <div class="bg-red-100 border-t border-b border-red-500 text-red-700 px-4 py-3 mt-3" role="alert">
-            <p>{{ session('message') }}</p>
-        </div>
-    @endif
 </div>

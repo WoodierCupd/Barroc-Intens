@@ -70,6 +70,48 @@ class DatabaseSeeder extends Seeder
             'password' => bcrypt('password'),
             'role_id' => $admin->id,
         ]);
+        User::factory()->create([
+            'name' => 'User',
+            'username' => 'User',
+            'email' => 'user@gmail.com',
+            'password' => bcrypt('password'),
+            'role_id' => $klant->id,
+        ]);
+        User::factory()->create([
+            'name' => 'Purchase',
+            'username' => 'Purchase',
+            'email' => 'purchase@gmail.com',
+            'password' => bcrypt('password'),
+            'role_id' => $purchase->id,
+        ]);
+        User::factory()->create([
+            'name' => 'Sales',
+            'username' => 'Sales',
+            'email' => 'sales@gmail.com',
+            'password' => bcrypt('password'),
+            'role_id' => $sales->id,
+        ]);
+        User::factory()->create([
+            'name' => 'Finance',
+            'username' => 'Finance',
+            'email' => 'finance@gmail.com',
+            'password' => bcrypt('password'),
+            'role_id' => $finance->id,
+        ]);
+        User::factory()->create([
+            'name' => 'Maintenance',
+            'username' => 'Maintenance',
+            'email' => 'maintenance@gmail.com',
+            'password' => bcrypt('password'),
+            'role_id' => $maintenance->id,
+        ]);
+        User::factory()->create([
+            'name' => 'Head-Maintenance',
+            'username' => 'Head-Maintenance',
+            'email' => 'headmaintenance@gmail.com',
+            'password' => bcrypt('password'),
+            'role_id' => $head_maintenance->id,
+        ]);
 
 //        Maakt users aan
         $customers = User::factory(200)->create(['role_id' => $klant->id]);

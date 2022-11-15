@@ -22,7 +22,7 @@
     <p>{{$email}}</p>
     <p>U moet eerst uw wachtwoord veranderen voordat U kunt inloggen.</p>
     <br>
-    <a href="http://127.0.0.1:8000/forgot-password">Verander uw wachtwoord via deze link</a>
+    <a href="http://barroc-intens.test/forgot-password">Verander uw wachtwoord via deze link</a>
 </div>
 
 </body>

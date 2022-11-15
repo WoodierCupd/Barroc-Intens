@@ -5,8 +5,10 @@
 
 <x-hero/>
 <main>
-    @include('cookie-consent::index')
+    @include('components.about-us')
     @include('components.carousel', ['items' => $machines])
+
+    @include('cookie-consent::index')
 </main>
 
 @livewireScripts

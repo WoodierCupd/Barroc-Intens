@@ -3,17 +3,8 @@
             src="https://maps.google.com/maps?q=terheidenseweg%20350&t=k&z=13&ie=UTF8&iwloc=&output=embed"
             frameborder="0" scrolling="no" marginheight="0" marginwidth="0"></iframe>
     <div class="container">
-        <div class="grid grid-cols-2">
-            <div class="left">
-                <div class="message">
-                    <h1 class="h1_msg">Contact informatie</h1>
-                    <p class="p_msg">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci aspernatur blanditiis, commodi consectetur ducimus earum fugit incidunt iste laboriosam maiores nam nostrum optio perferendis quas quibusdam quidem recusandae rem, ut?</p>
-                    <p class="p_msg">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci aspernatur blanditiis, commodi consectetur ducimus earum fugit incidunt iste laboriosam maiores nam nostrum optio perferendis quas quibusdam quidem recusandae rem, ut?</p>
-                    <p class="p_msg">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci aspernatur blanditiis, commodi consectetur ducimus earum fugit incidunt iste laboriosam maiores nam nostrum optio perferendis quas quibusdam quidem recusandae rem, ut?</p>
-                    <p class="p_msg">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci aspernatur blanditiis, commodi consectetur ducimus earum fugit incidunt iste laboriosam maiores nam nostrum optio perferendis quas quibusdam quidem recusandae rem, ut?</p>
-                </div>
-            </div>
-            <div class="right">
+        <div class="flex justify-center">
+            <div class="contact">
                 <h1 class="h1_contact">Contact ons!</h1>
                 <form wire:submit.prevent="submit">
                     <div class="form-group">
@@ -57,14 +48,12 @@
                                placeholder="Huren van koffiemachine">
                     </div>
                     <div class="form-group">
-                        <label for="message" class="block mb-2 text-sm font-medium text-black-900 dark:text-black-400">Schrijf
-                            uw
-                            mail</label>
+                        <label for="message" class="block mb-2 text-sm font-medium text-black-900 dark:text-black-400">Schrijf <uw></uw> mail</label>
                         <textarea wire:model="mail" id="message"
                                   class="block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500 dark:bg-white-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-gray dark:focus:ring-blue-500 dark:focus:border-blue-500"
                                   placeholder=""></textarea>
                         <button type="submit"
-                                class="bg-barroc_yellow text-barroc_grey hover:text-barroc_yellow hover:bg-barroc_grey py-2 px-4 mx-2 rounded transition ease-in-out duration-150">Verstuur mail</button>
+                                class="bg-barroc_yellow text-barroc_grey hover:text-barroc_yellow hover:bg-barroc_grey transition ease-in-out duration-150">Verstuur mail</button>
 
                     </div>
                 </form>

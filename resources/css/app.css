@@ -17,6 +17,7 @@
     footer {
         @apply bg-barroc_yellow font-roboto;
         padding: 60px 0 20px 0;
+        border-top: 1px solid #FDD716 !important;
     }
     .footer__top {
         @apply leading-7;
@@ -27,9 +28,14 @@
         @apply grid-rows-1 grid-cols-4;
     }
 
+    footer h1 {
+        font-family: BigShoulderDisplay;
+    }
+
     footer h2 {
         @apply text-3xl font-bold !important;
         margin: 20px 0 10px !important;
+        font-family: Roboto;
     }
 
     footer h3 {
@@ -49,6 +55,22 @@
     footer a:hover {
         text-decoration-color: black !important;
         transition: text-decoration-color .4s ease;
+    }
+
+    footer .footer__contact--btn {
+        font-size: 1.5rem;
+        line-height: 2rem;
+        font-weight: 800;
+        font-family: 'BigShoulderDisplay';
+        padding: 14px 20px;
+        background: #FDD716;
+
+    }
+
+    footer .footer__contact--btn:hover {
+        background: black;
+        color: #FDD716 !important;
+        transition: all ease .5s;
     }
 }
 
@@ -106,8 +128,13 @@
     .product__name {
         @apply col-start-2 uppercase font-extrabold;
         font-size: 50px;
+        font-family: BigShoulderDisplay;
         margin: 0 0 20px 0;
 
+    }
+
+    .product__description {
+        font-family: Roboto;
     }
 
     .product__btn {
@@ -121,6 +148,8 @@
         @apply grid gap-x-7;
         grid-template-areas: "logo items cta";
         grid-template-columns: 200px 1fr 1fr;
+        background: #ffffff;
+        position: sticky;
     }
 
     .navbar__logo {
@@ -166,6 +195,22 @@
 
 }
 
+@layer about-us {
+    .about-us .container {
+        width: 50% !important;
+    }
+
+    .about-us h1{
+        font-family: BigShoulderDisplay;
+        font-weight: 900 !important;
+        font-size: 3rem !important;
+    }
+
+    .about-us p{
+        line-height: 25px;
+        font-family: Roboto, serif;
+    }
+}
 /*hero styles*/
 
 .hero{
@@ -184,7 +229,7 @@
 
 .searchbar{
     height: fit-content;
-    width: 25%;
+    width: 50%;
     border: none;
     background-color: #FDD716;
 }
@@ -193,6 +238,11 @@
     justify-content: space-between;
     align-items: flex-end;
     display: flex;
+
+}
+
+.search-top h1 {
+    font-family: BigShoulderDisplay;
 }
 
 .sticky a{
@@ -205,12 +255,33 @@
     background-image: url(https://media.istockphoto.com/photos/staff-working-behind-counter-in-busy-coffee-shop-picture-id900816038?k=20&m=900816038&s=612x612&w=0&h=PYTP1QdLaw2YuvrKZVe8nGgek6wa0CmYN4bRqjhYr8E=);
 }
 
-.filter{
-    background-color: rgba(0, 0, 0, 0.500);
+.hero__cta--btn {
+    font-size: 1.5rem;
+    line-height: 2rem;
+    font-weight: 800;
+    font-family: 'BigShoulderDisplay';
+    padding: 14px 20px;
+    background: #FDD716;
 }
 
-.form-group{
-    width: 50px;
+.hero__cta--btn:hover {
+    background: black;
+    color: #FDD716 !important;
+    transition: all ease .5s;
+}
+
+.hero__title {
+    font-family: BigShoulderDisplay;
+    color: white;
+    font-size: 100px;
+}
+
+.hero__description {
+    font-family: Roboto;
+}
+
+.filter{
+    background-color: rgba(0, 0, 0, 0.500);
 }
 
 .form-group input{
@@ -226,15 +297,29 @@
     width: 600px;
 }
 .form-group button{
-    width: 600px;
+    font-size: 1.5rem;
+    line-height: 2rem;
+    font-weight: 800;
+    font-family: 'BigShoulderDisplay';
+    padding: 14px 20px;
+    background: #FDD716;
     margin-top: 20px;
 }
 
-
-
 .h1_contact{
-    font-family: 'Roboto';
-    margin-top: 20px;
+    font-family: BigShoulderDisplay;
+    font-size: 50px;
+    font-weight: 800;
+    text-transform: uppercase;
+
+}
+
+form .contact {
+    margin: 30px 0;
+}
+
+.contact form{
+    font-family: Roboto;
 }
 
 .message{
@@ -253,15 +338,6 @@
 .p_msg{
     margin-left: 30px;
     margin-top: 40px;
-}
-
-.right{
-    padding-left: 100px;
-    padding-top: 20px;
-}
-
-.left{
-    padding-top: 20px;
 }
 
 .form-group label{
@@ -283,6 +359,10 @@ section {
     margin: 60px auto;
 }
 
+.js-cookie-consent{
+    z-index: 1;
+}
 
-
-
+.grid-item-coffee {
+    font-family: Roboto;
+}

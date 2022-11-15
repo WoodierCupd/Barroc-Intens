@@ -1,11 +1,18 @@
-<div>
+<div style="margin-bottom: 30px">
     <div class="container mx-auto bg-white">
         <div class="search-top mt-24 mb-10">
             <h1 class="text-5xl font-extrabold">Producten</h1>
-            <input class="searchbar rounded" placeholder="Zoek.." type="text" wire:model="searchTerm"/>
+            <div>
+                <select wire:model="type" name="type" id="type">
+                    <option value="0">Alle</option>
+                    <option value="1">Koffie machienes</option>
+                    <option value="2">Koffie bonen</option>
+                </select>
+                <input class="searchbar rounded" placeholder="Zoek.." type="text" wire:model="searchTerm"/>
+            </div>
         </div>
 
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 mb-8">
             @foreach($products as $i)
                 <div class="grid-item-coffee">
                     <a href="{{route('product-index', $i->id)}}">

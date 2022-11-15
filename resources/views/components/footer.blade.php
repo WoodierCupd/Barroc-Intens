@@ -1,5 +1,5 @@
 <footer>
-    <div class="container mx-auto">
+    <div class="container mx-auto footer-bg">
         <div class="footer__top">
             <div class="grid">
                 <div class="products">

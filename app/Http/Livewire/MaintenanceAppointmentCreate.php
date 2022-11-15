@@ -3,6 +3,7 @@
 namespace App\Http\Livewire;
 
 use App\Models\Company;
+use App\Models\User;
 use App\Models\Maintenance_appointment;
 use Livewire\Component;
 
@@ -13,10 +14,15 @@ class MaintenanceAppointmentCreate extends Component
     public $remark;
     public $company;
     public $companies;
+    public $user;
+    public $users;
+    public $responsible;
+
     public $date;
 
     public function mount(){
         $this->companies = Company::all();
+        $this->users = User::all()->where('role_id', '6');
         $this->company = Company::first();
     }
 
@@ -26,6 +32,7 @@ class MaintenanceAppointmentCreate extends Component
         $appointment->remark = $this->remark;
         $appointment->type = $this->type;
         $appointment->date_added = $this->date;
+        $appointment->responsible = $this->users;
         $appointment->save();
         session()->flash('message', "De note is succesvol aangemaakt!");
         return redirect()->to(route('dashboard'));

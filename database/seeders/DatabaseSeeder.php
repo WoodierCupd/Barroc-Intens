@@ -47,6 +47,11 @@ class DatabaseSeeder extends Seeder
             'name' => 'maintenance',
         ]);
 
+        $head_maintenance = Role::create([
+            'name' => 'head-maintenance',
+        ]);
+
+
         $coffee_machine = Product_category::create([
             'name' => 'coffee machine',
             'is_employee_only' => 0,
@@ -71,8 +76,8 @@ class DatabaseSeeder extends Seeder
         User::factory(3)->create(['role_id' => $purchase->id]);
         $sales = User::factory(3)->create(['role_id' => $sales->id]);
         User::factory(3)->create(['role_id' => $finance->id]);
-        User::factory(3)->create(['role_id' => $maintenance->id]);
-
+        $maintenance = User::factory(3)->create(['role_id' => $maintenance->id]);
+        User::factory(1)->create(['role_id' => $head_maintenance->id]);
 //        Maakt companies aan die gelinkt zijn aan de customers die hiervoor zijn aangemaakt.
         $companies = collect();
         foreach ($customers as $customer){
@@ -81,7 +86,7 @@ class DatabaseSeeder extends Seeder
         }
         foreach ($companies as $company){
             if (rand(0, 1) == 1){
-                Maintenance_appointment::factory()->create(['company_id' => $company->id]);
+                Maintenance_appointment::factory()->create(['company_id' => $company->id, 'responsible' => $maintenance->random()->id]);
                 Note::factory()->create(['company_id' => $company->id, 'author_id' => $sales->random()]);
             } else {
                 CustomInvoice::factory()->create(['company_id' => $company->id]);

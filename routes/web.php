@@ -48,7 +48,7 @@ Route::get('/user-create', function () {
 })->middleware(['auth', 'verified'])->name('user-create');
 
 Route::get('/maintenance-appointments-create', function () {
-    if (Auth::user()->role_id == 6){
+    if (Auth::user()->role_id == 7){
         return view('maintenance-appointments-create');
     } else {
         return abort(401);
@@ -149,6 +149,8 @@ Route::get('/dashboard', function () {
             return redirect(route('finance'));
         case 6:
             return redirect(route('maintenance'));
+        case 7:
+            return redirect(route('head-maintenance'));
     }
 //    return view('dashboard');
 })->middleware(['auth', 'verified'])->name('dashboard');
@@ -201,6 +203,14 @@ Route::get('/maintenance', function () {
         return abort(401);
     }
 })->middleware(['auth', 'verified'])->name('maintenance');
+
+Route::get('/head-maintenance', function () {
+    if (Auth::user()->role_id == 7) {
+        return view('head-maintenance');
+    } else {
+        return abort(401);
+    }
+})->middleware(['auth', 'verified'])->name('head-maintenance');
 
 // Route::view('/', 'home');
 

@@ -6,8 +6,8 @@
             <th scope="col" class="py-3 px-6">Maker</th>
             <th scope="col" class="py-3 px-6">Datum</th>
             <th scope="col" class="py-3 px-6">Type</th>
-            <th scope="col" class="py-3 px-6">Detail pagina</th>
             <th scope="col" class="py-3 px-6">Verantwoordelijke</th>
+            <th scope="col" class="py-3 px-6">Detail pagina</th>
         </tr>
         </thead>
         <tbody>
@@ -21,6 +21,7 @@
                 @else
                     <td class="py-4 px-6">Routinematig bezoek</td>
                 @endif
+                <td class="py-4 px-6">{{$maintenance_appointment->getUser->name}}</td>
                 <td class="py-4 px-6"><a href="{{route('maintenance_appointment', $maintenance_appointment->id)}}">Detail page</a></td>
             </tr>
         @endforeach

@@ -15,7 +15,7 @@
 @layer footer {
 
     footer {
-        @apply bg-white font-roboto;
+        @apply bg-barroc_yellow font-roboto;
         padding: 60px 0 20px 0;
         border-top: 1px solid #FDD716 !important;
     }
@@ -362,7 +362,6 @@ section {
 .js-cookie-consent{
     z-index: 1;
 }
-
 
 .grid-item-coffee {
     font-family: Roboto;

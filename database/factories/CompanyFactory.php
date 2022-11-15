@@ -25,7 +25,7 @@ class CompanyFactory extends Factory
             'house_number' => rand(1,200),
             'city' => fake()->city(),
             'country_code' => fake()->countryCode(),
-            'bkr_checked' => fake()->dateTime(),
+            'bkr_checked' => (rand(0,1) == 1) ? fake()->dateTime() : null,
         ];
     }
 }

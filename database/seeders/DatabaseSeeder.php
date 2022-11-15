@@ -72,7 +72,7 @@ class DatabaseSeeder extends Seeder
         ]);
 
 //        Maakt users aan
-        $customers = User::factory(20)->create(['role_id' => $klant->id]);
+        $customers = User::factory(200)->create(['role_id' => $klant->id]);
         User::factory(3)->create(['role_id' => $purchase->id]);
         $sales = User::factory(3)->create(['role_id' => $sales->id]);
         User::factory(3)->create(['role_id' => $finance->id]);
@@ -84,12 +84,12 @@ class DatabaseSeeder extends Seeder
             $companies->push(Company::factory()->create(['contact_id' => $customer->id]));
 
         }
+
         foreach ($companies as $company){
+            CustomInvoice::factory(rand(2,5))->create(['company_id' => $company->id]);
             if (rand(0, 1) == 1){
                 Maintenance_appointment::factory()->create(['company_id' => $company->id, 'responsible' => $maintenance->random()->id]);
                 Note::factory()->create(['company_id' => $company->id, 'author_id' => $sales->random()]);
-            } else {
-                CustomInvoice::factory()->create(['company_id' => $company->id]);
             }
         }
 

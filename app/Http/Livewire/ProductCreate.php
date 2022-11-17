@@ -11,6 +11,7 @@ class ProductCreate extends Component
     public $name;
     public $price;
     public $category = 1;
+    public $stock;
     public $description;
     public $categories;
     public $product;
@@ -25,6 +26,7 @@ class ProductCreate extends Component
         $this->product->price = $this->price;
         $this->product->product_category_id = $this->category;
         $this->product->description = $this->description;
+        $this->product->stock = $this->stock;
         $this->product->save();
 
         return redirect()->to(route('dashboard'));

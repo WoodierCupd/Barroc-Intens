@@ -19,7 +19,7 @@
                 @if($product->stock <= 5)
                     <td class="py-4 px-6 text-red-600">{{$product->stock}}</td>
                 @elseif($product->stock <= 10)
-                    <td class="py-4 px-6 text-orange-600">{{$product->stock}}</td>
+                    <td class="py-4 px-6 text-orange-500">{{$product->stock}}</td>
                 @else
                     <td class="py-4 px-6 text-green-600">{{$product->stock}}</td>
                 @endif

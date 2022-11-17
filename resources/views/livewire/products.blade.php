@@ -5,6 +5,7 @@
             <th scope="col" class="py-3 px-6">Id</th>
             <th scope="col" class="py-3 px-6">Name</th>
             <th scope="col" class="py-3 px-6">Price</th>
+            <th scope="col" class="py-3 px-6">Stock</th>
             <th scope="col" class="py-3 px-6">Category</th>
             <th scope="col" class="py-3 px-6">Edit</th>
         </tr>
@@ -15,6 +16,7 @@
                 <td scope="row" class="py-4 px-6 font-medium text-gray-900 whitespace-nowrap dark:text-white">{{$product->id}}</td>
                 <td class="py-4 px-6">{{$product->name}}</td>
                 <td class="py-4 px-6">{{$product->price}}</td>
+                <td class="py-4 px-6">{{$product->stock}}</td>
                 <td class="py-4 px-6">{{$product->getCategory->name}}</td>
                 <td class="py-4 px-6"><a href="{{route('product', $product->id)}}">Edit</a></td>
             </tr>

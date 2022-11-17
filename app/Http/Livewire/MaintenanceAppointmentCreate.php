@@ -32,7 +32,7 @@ class MaintenanceAppointmentCreate extends Component
         $appointment->remark = $this->remark;
         $appointment->type = $this->type;
         $appointment->date_added = $this->date;
-        $appointment->responsible = $this->users;
+        $appointment->responsible = $this->user;
         $appointment->save();
         session()->flash('message', "De note is succesvol aangemaakt!");
         return redirect()->to(route('dashboard'));

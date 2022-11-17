@@ -16,23 +16,23 @@ class MaintenanceAppointmentCreate extends Component
     public $companies;
     public $user;
     public $users;
-    public $responsible;
 
     public $date;
 
     public function mount(){
         $this->companies = Company::all();
         $this->users = User::all()->where('role_id', '6');
-        $this->company = Company::first();
+        $this->company = Company::first()->id;
+        $this->user = User::all()->where('role_id', '6')->first()->id;
     }
 
     public function submit(){
         $appointment = new Maintenance_appointment;
-        $appointment->company_id = $this->company->id;
+        $appointment->company_id = $this->company;
         $appointment->remark = $this->remark;
         $appointment->type = $this->type;
         $appointment->date_added = $this->date;
-        $appointment->responsible = $this->users;
+        $appointment->responsible = $this->user;
         $appointment->save();
         session()->flash('message', "De note is succesvol aangemaakt!");
         return redirect()->to(route('dashboard'));

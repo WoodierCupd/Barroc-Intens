@@ -12,7 +12,7 @@ class InvoiceCreate extends Component
     public $companies;
     public $paid_at;
     public $amount;
-    public $company;
+    public $company = 1;
 
     public function mount(){
         $this->companies = Company::all();

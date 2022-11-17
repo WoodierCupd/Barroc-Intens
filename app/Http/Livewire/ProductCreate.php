@@ -27,7 +27,7 @@ class ProductCreate extends Component
         $this->product->description = $this->description;
         $this->product->save();
 
-        return redirect()->to(route('admin'));
+        return redirect()->to(route('dashboard'));
     }
 
     public function render()

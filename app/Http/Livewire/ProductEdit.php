@@ -10,6 +10,7 @@ class ProductEdit extends Component
 {
     public $name;
     public $price;
+    public $stock;
     public $category;
     public $description;
     public $categories;
@@ -21,6 +22,7 @@ class ProductEdit extends Component
         $this->price = $this->product->price;
         $this->category = $this->product->category;
         $this->description = $this->product->description;
+        $this->stock = $this->product->stock;
         $this->category = $this->product->product_category_id;
     }
 
@@ -29,6 +31,7 @@ class ProductEdit extends Component
         $this->product->price = $this->price;
         $this->product->product_category_id = $this->category;
         $this->product->description = $this->description;
+        $this->product->stock = $this->stock;
         $this->product->save();
         session()->flash('message', 'Product successfully updated.');
     }

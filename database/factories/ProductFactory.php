@@ -24,8 +24,7 @@ class ProductFactory extends Factory
             'name' => fake()->word(),
             'description' => fake()->text(rand(1000, 2000)),
             'price' => fake()->randomFloat(2, 5, 200),
-            'image_path' => (rand(0,1) == 1) ? asset('img/machine-bit-deluxe.png') : asset('img/machine-bit-light.png'),
-            'stock' => fake()->randomFloat(0, 0, 10),
+            'stock' => fake()->randomFloat(0, 0, 20),
         ];
     }
 }

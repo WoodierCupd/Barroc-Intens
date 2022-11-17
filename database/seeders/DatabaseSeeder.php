@@ -134,8 +134,8 @@ class DatabaseSeeder extends Seeder
                 Note::factory()->create(['company_id' => $company->id, 'author_id' => $sales->random()]);
             }
         }
-
-        Product::factory(6)->create(['product_category_id' => $coffee_machine->id]);
-        Product::factory(12)->create(['product_category_id' => $beans->id]);
+        
+        Product::factory(6)->create(['product_category_id' => $coffee_machine->id, 'image_path' => (rand(0,1) == 1) ? asset('img/machine-bit-deluxe.png') : asset('img/machine-bit-light.png')]);
+        Product::factory(12)->create(['product_category_id' => $beans->id, 'image_path' => 'https://www.koffievoordeel.nl/media/catalog/product/c/w/cw101701_illy_beans_classico_bonen-1.png?quality=95&fit=bounds&height=450&width=700&bg-color=FFF']);
     }
 }

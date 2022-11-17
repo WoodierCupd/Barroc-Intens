@@ -48,11 +48,6 @@
                             {{ __('Maintenance') }}
                         </x-nav-link>
                     @endif
-                    @if(Auth::user()->role_id == '7')
-                        <x-nav-link :href="route('head-maintenance')" :active="request()->routeIs('head-maintenance')">
-                            {{ __('Head Maintenance') }}
-                        </x-nav-link>
-                    @endif
                 </div>
             </div>
 

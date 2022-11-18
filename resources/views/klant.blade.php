@@ -26,6 +26,10 @@
                         @endphp
                     @endif
                 </div>
+                <div class="p-6 bg-white border-b border-gray-200">
+                    <h1 class="font-semibold text-xl">Alle facturen</h1>
+                    @livewire('invoice-show-user')
+                </div>
             </div>
         </div>
     </div>

@@ -23,6 +23,11 @@ class NoteEdit extends Component
         return view('livewire.note-edit');
     }
 
+    public function delete(){
+        $this->note->delete();
+        return redirect()->to(route('dashboard'));
+    }
+
     public function submit(){
         $this->note->note = $this->noteText;
         $this->note->company_id = $this->company;

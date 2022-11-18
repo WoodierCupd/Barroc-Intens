@@ -41,7 +41,7 @@ class UserEdit extends Component
 
     public function delete(){
         $this->user->delete();
-        return redirect()->to(route('admin'));
+        return redirect()->to(route('dashboard'));
     }
 
     public function render()

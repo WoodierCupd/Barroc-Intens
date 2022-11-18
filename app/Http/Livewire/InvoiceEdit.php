@@ -34,6 +34,11 @@ class InvoiceEdit extends Component
         session()->flash('message', "De factuur is succesvol aangepast!");
     }
 
+    public function delete(){
+        $this->invoice->delete();
+        return redirect()->to(route('dashboard'));
+    }
+
     public function render()
     {
         return view('livewire.invoice-edit');

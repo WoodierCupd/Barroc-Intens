@@ -13,7 +13,9 @@ class InvoiceShowUser extends Component
 
     public function mount(){
         $company = Company::all()->where('contact_id', Auth::user()->id)->first();
-        $this->invoices = CustomInvoice::all()->where('company_id', $company->id);
+        if (count($company)){
+            $this->invoices = CustomInvoice::all()->where('company_id', $company->id);
+        }
     }
 
     public function render()

@@ -78,6 +78,13 @@ class DatabaseSeeder extends Seeder
             'role_id' => $klant->id,
         ]);
         User::factory()->create([
+            'name' => 'User1',
+            'username' => 'User1',
+            'email' => 'user1@gmail.com',
+            'password' => bcrypt('password'),
+            'role_id' => $klant->id,
+        ]);
+        User::factory()->create([
             'name' => 'Purchase',
             'username' => 'Purchase',
             'email' => 'purchase@gmail.com',

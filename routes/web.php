@@ -124,7 +124,7 @@ Route::get('/product-index/{product}', function (\App\Models\Product $product) {
 })->name('product-index');
 
 Route::get('/maintenance_appointment/{maintenance_appointment}', function (\App\Models\Maintenance_appointment $maintenance_appointment) {
-    if (Auth::user()->role_id == 6){
+    if (Auth::user()->role_id == 6 or Auth::user()->role_id == 7){
         return view('maintenance_appointment')->with(compact('maintenance_appointment'));
     } else {
         return abort(401);

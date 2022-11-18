@@ -48,7 +48,7 @@ Route::get('/user-create', function () {
 })->middleware(['auth', 'verified'])->name('user-create');
 
 Route::get('/maintenance-appointments-create', function () {
-    if (Auth::user()->role_id == 7){
+    if (Auth::user()->role_id == 7 || Auth::user()->role_id == 1){
         return view('maintenance-appointments-create');
     } else {
         return abort(401);
@@ -64,7 +64,7 @@ Route::get('/note-create', function () {
 })->middleware(['auth', 'verified'])->name('note-create');
 
 Route::get('/company-create', function () {
-    if (Auth::user()->role_id == 1){
+    if (Auth::user()->role_id == 1  || Auth::user()->role_id ==  4){
         return view('company-create');
     } else {
         return abort(401);
@@ -112,7 +112,7 @@ Route::get('/note/{note}', function (\App\Models\Note $note) {
 })->middleware(['auth', 'verified'])->name('note');
 
 Route::get('/product-create', function () {
-    if (Auth::user()->role_id == 1 || Auth::user()->role_id == 5){
+    if (Auth::user()->role_id == 1 || Auth::user()->role_id == 5 || Auth::user()->role_id == 3){
         return view('product-create');
     } else {
         return abort(401);

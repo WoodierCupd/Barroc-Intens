@@ -88,7 +88,7 @@ Route::get('/invoice/{invoice}', function (\App\Models\CustomInvoice $invoice) {
 })->middleware(['auth', 'verified'])->name('invoice');
 
 Route::get('/company/{company}', function (\App\Models\Company $company) {
-    if (Auth::user()->role_id == 1){
+    if (Auth::user()->role_id == 1 || Auth::user()->role_id == 4){
         return view('company')->with(compact('company'));
     } else {
         return abort(401);

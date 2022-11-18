@@ -17,12 +17,14 @@
                         <h1 class="font-semibold pt-3 text-xl">Bedrijfs informatie</h1>
                         @php
                             $company = \App\Models\Company::where('contact_id', Auth::user()->id)->first();
+                            ($company->bkr_checked) ? $bkr = 'U heeft de BKR check gehaald' : $bkr = 'U heeft de BKR check nog niet gehaald';
                             echo('<p>Naam: <span class="font-bold">' . $company->name . '</span></p>');
                             echo('<p>Telefoon nummer: <span class="font-bold">' . $company->phone . '</span></p>');
                             echo('<p>Straat: <span class="font-bold">' . $company->street . '</span></p>');
                             echo('<p>Huis nummer: <span class="font-bold">' . $company->house_number . '</span></p>');
                             echo('<p>Stad: <span class="font-bold">' . $company->city . '</span></p>');
                             echo('<p>Land: <span class="font-bold">' . $company->country_code . '</span></p>');
+                            echo('<p>BKR: <span class="font-bold">' . $bkr . '</span></p>');
                         @endphp
                     @endif
                 </div>

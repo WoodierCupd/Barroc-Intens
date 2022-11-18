@@ -1,7 +1,7 @@
 <x-app-layout>
     <x-slot name="header">
         <h2 class="font-semibold text-xl text-gray-800 leading-tight">
-            {{ __('Purchase dashboard') }}
+            {{ __('Inkoop overzicht') }}
         </h2>
     </x-slot>
 
@@ -9,31 +9,11 @@
         <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
             <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg">
                 <div class="p-6 bg-white border-b border-gray-200">
-                    <div class="products">
-                        <table>
-                            <thead>
-                            <tr>
-                                <th>~</th>
-                                <th>Product naam</th>
-                                <th>Aantal</th>
-                                <th>Action</th>
-                            </tr>
-                            </thead>
-                            <tbody>
-                            <tr>
-                                <td class="product__checkbox"><input type="checkbox"></td>
-                                <td class="product__title">Douwe egberts machine</td>
-                                <td class="product__ammount">15</td>
-                                <td class="product__options flex gap-0.5">
-                                    <a href="/" class="">edit</a>
-                                    <form action="POST">
-                                        <input type="submit" value="delete">
-                                    </form>
-                                </td>
-                            </tr>
-                            </tbody>
-                        </table>
+                    <div class="flex justify-between items-center mb-3">
+                        <h1 class="font-bold text-3xl">Producten</h1>
+                        <a href="{{route('product-create')}}"><button type="button" class="text-white bg-gradient-to-r from-blue-500 via-blue-600 to-blue-700 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-blue-300 dark:focus:ring-blue-800 font-medium rounded-lg text-sm px-5 py-2.5 text-center mr-2 mb-2">Maak een nieuw product</button></a>
                     </div>
+                    <livewire:products/>
                 </div>
             </div>
         </div>

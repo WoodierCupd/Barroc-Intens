@@ -30,7 +30,7 @@
                     @endif
                     @if(Auth::user()->role_id == '3')
                         <x-nav-link :href="route('purchase')" :active="request()->routeIs('purchase')">
-                            {{ __('Purchase') }}
+                            {{ __('Inkoop') }}
                         </x-nav-link>
                     @endif
                     @if(Auth::user()->role_id == '4')
@@ -40,12 +40,17 @@
                     @endif
                     @if(Auth::user()->role_id == '5')
                         <x-nav-link :href="route('finance')" :active="request()->routeIs('finance')">
-                            {{ __('Finance') }}
+                            {{ __('Financiën') }}
                         </x-nav-link>
                     @endif
                     @if(Auth::user()->role_id == '6')
                         <x-nav-link :href="route('maintenance')" :active="request()->routeIs('maintenance')">
-                            {{ __('Maintenance') }}
+                            {{ __('Onderhoud') }}
+                        </x-nav-link>
+                    @endif
+                    @if(Auth::user()->role_id == '7')
+                        <x-nav-link :href="route('maintenance')" :active="request()->routeIs('maintenance')">
+                            {{ __('Hoofd-Onderhoud') }}
                         </x-nav-link>
                     @endif
                 </div>
@@ -74,7 +79,7 @@
                             <x-dropdown-link :href="route('logout')"
                                     onclick="event.preventDefault();
                                                 this.closest('form').submit();">
-                                {{ __('Log Out') }}
+                                {{ __('Log uit') }}
                             </x-dropdown-link>
                         </form>
                     </x-slot>

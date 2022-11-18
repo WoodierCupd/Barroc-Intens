@@ -42,7 +42,7 @@ class CompanyCreate extends Component
         $this->company->contact_id = $this->user;
         $this->company->save();
 
-        return redirect()->to(route('admin'));
+        return redirect()->to(route('dashboard'));
     }
 
     public function render()
